@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="468.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kazi_office_and_marriage_register_office.sayed.ManageUserController">
+   <children>
+      <Label layoutX="50.0" layoutY="77.0" text="User Id : " />
+      <TextField layoutX="109.0" layoutY="73.0" />
+      <TableView layoutX="21.0" layoutY="126.0" prefHeight="105.0" prefWidth="569.0">
+        <columns>
+          <TableColumn prefWidth="146.00003051757812" text="User Id" />
+          <TableColumn prefWidth="170.6666259765625" text="Name" />
+            <TableColumn prefWidth="122.66668701171875" text="Role" />
+            <TableColumn prefWidth="132.6666259765625" text="Status" />
+        </columns>
+      </TableView>
+      <Button layoutX="424.0" layoutY="62.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="104.0" text="Seacrh" />
+      <Label layoutX="27.0" layoutY="280.0" prefHeight="17.0" prefWidth="159.0" text="Edit User Information :" textFill="#7b720a">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="322.0" text="Full Name" />
+      <TextField layoutX="107.0" layoutY="318.0" />
+      <TextField layoutX="406.0" layoutY="318.0" />
+      <Label layoutX="366.0" layoutY="322.0" text="Email" />
+      <ComboBox layoutX="107.0" layoutY="368.0" prefWidth="150.0" />
+      <Label layoutX="46.0" layoutY="372.0" text="Role" />
+      <ComboBox layoutX="406.0" layoutY="376.0" prefWidth="150.0" />
+      <Label layoutX="368.0" layoutY="380.0" text="Status" />
+      <Button layoutX="156.0" layoutY="420.0" mnemonicParsing="false" onAction="#updateAndGoToDashBoardButtonOnAction" prefHeight="25.0" prefWidth="67.0" text="Update" />
+      <Button layoutX="306.0" layoutY="420.0" mnemonicParsing="false" onAction="#backAndGoToDashBoardButtonOnAction" prefHeight="25.0" prefWidth="75.0" text="Back" />
+      <Label layoutX="223.0" layoutY="14.0" prefHeight="17.0" prefWidth="166.0" text="Manage User" textFill="#c00a0a">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
