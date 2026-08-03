@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/26" fx:controller="com.example.kazi_office_and_marriage_register_office.Bushra.WitnessDashboard" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox prefHeight="80.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="97.0" prefWidth="600.0" text="          Witness Dashboard">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <AnchorPane prefHeight="241.0" prefWidth="420.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="127.0" layoutY="37.0" mnemonicParsing="false" onAction="#marriageappoinmentonaction" prefHeight="25.0" prefWidth="151.0" text="Marriage Appointment" />
+            <Button layoutX="140.0" layoutY="74.0" mnemonicParsing="false" onAction="#participationhistoryonaction" text="Participation History" />
+            <Button layoutX="175.0" layoutY="112.0" mnemonicParsing="false" onAction="#logoutonaction" text="Logout" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

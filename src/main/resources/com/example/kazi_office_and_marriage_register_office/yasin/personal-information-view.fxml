@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="382.0" prefWidth="570.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kazi_office_and_marriage_register_office.yasin.PersonalizationController">
+   <children>
+      <TextField fx:id="fullNameTextField" layoutX="114.0" layoutY="58.0" />
+      <TextField fx:id="fatherNameTextField" layoutX="114.0" layoutY="100.0" />
+      <TextField fx:id="motherNameTextField" layoutX="114.0" layoutY="146.0" />
+      <TextField fx:id="addressTextField" layoutX="114.0" layoutY="198.0" />
+      <Label layoutX="27.0" layoutY="62.0" prefHeight="18.0" prefWidth="69.0" text="Full Name" />
+      <Label layoutX="27.0" layoutY="104.0" prefHeight="18.0" prefWidth="69.0" text="Father Name" />
+      <Label layoutX="27.0" layoutY="150.0" prefHeight="18.0" prefWidth="79.0" text="Mother Name" />
+      <Label layoutX="32.0" layoutY="202.0" prefHeight="18.0" prefWidth="69.0" text="Address" />
+      <DatePicker fx:id="dateOfBirthTextField" layoutX="385.0" layoutY="197.0" prefHeight="26.0" prefWidth="150.0" />
+      <Label layoutX="312.0" layoutY="202.0" prefHeight="18.0" prefWidth="69.0" text="Date Of Birth" />
+      <TextField fx:id="nidNumberTextField" layoutX="386.0" layoutY="58.0" />
+      <TextField fx:id="emailTextField" layoutX="386.0" layoutY="100.0" />
+      <TextField fx:id="phoneNumberTextField" layoutX="386.0" layoutY="146.0" />
+      <Label layoutX="312.0" layoutY="62.0" prefHeight="18.0" prefWidth="69.0" text="NID Number" />
+      <Label layoutX="312.0" layoutY="104.0" prefHeight="18.0" prefWidth="69.0" text="Email" />
+      <Label layoutX="295.0" layoutY="150.0" prefHeight="18.0" prefWidth="86.0" text="Phone Number" />
+      <Button layoutX="129.0" layoutY="305.0" mnemonicParsing="false" onAction="#nextAndGoToConfirmMarriagePageButtonOnAction" prefHeight="26.0" prefWidth="86.0" text="Next" />
+      <Button layoutX="338.0" layoutY="305.0" mnemonicParsing="false" onAction="#backAndGoToMarriageConsentPageButtonOnAction" prefHeight="26.0" prefWidth="86.0" text="Back" />
+   </children>
+</AnchorPane>

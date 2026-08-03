@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="boarderPaneDashBoard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kazi_office_and_marriage_register_office.yasin.DashBoardController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox prefHeight="441.0" prefWidth="197.0" spacing="20.0" style="-fx-background-color: light blue;" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#applyForMarriageButtonOnAction" prefHeight="26.0" prefWidth="203.0" text=" Apply for Marriage " textFill="#3c22bf" />
+            <Button mnemonicParsing="false" onAction="#uploadDocumentsButtonOnAction" prefHeight="26.0" prefWidth="214.0" text="Upload Documents" textFill="#2d19c2" />
+            <Button mnemonicParsing="false" onAction="#scheduleMarriageDateButtonOnAction" prefHeight="26.0" prefWidth="190.0" text="Schedule Marriage Date" textFill="#4423d7" />
+            <Button mnemonicParsing="false" onAction="#viewApplicationStatusButtonOnAction" prefHeight="26.0" prefWidth="216.0" text=" View Application Status" textFill="#2a1ca6" />
+            <Button mnemonicParsing="false" onAction="#payRegistrationFeeButtonOnAction" prefHeight="26.0" prefWidth="186.0" text="Pay Registration Fee" textFill="#3b30b2" />
+            <Button mnemonicParsing="false" onAction="#downloadCertificateButtonOnAction" prefHeight="26.0" prefWidth="183.0" text="Download Certificate" textFill="#3628b7" />
+            <Button mnemonicParsing="false" onAction="#updatePersonalInformationButtonOnAction" prefHeight="26.0" prefWidth="198.0" text="Update Personal Information" textFill="#222dc4" />
+            <Button mnemonicParsing="false" onAction="#requestCorrectionButtonOnAction" prefHeight="26.0" prefWidth="198.0" text="Request Correction" textFill="#4813e4" />
+            <Button mnemonicParsing="false" onAction="#logoutButtonOnAction" prefHeight="26.0" prefWidth="220.0" text="Logout " textFill="#e31919" textOverrun="CENTER_ELLIPSIS" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="406.0" prefWidth="537.0" style="-fx-background-color: #FFF8F3;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="161.0" layoutY="143.0" prefHeight="102.0" prefWidth="153.0" text="WELCOME !" textFill="#17532b">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <Label prefHeight="18.0" prefWidth="777.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

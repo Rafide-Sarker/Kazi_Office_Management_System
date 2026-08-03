@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFF8F3;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kazi_office_and_marriage_register_office.yasin.ReviewApplicationController">
+   <children>
+      <Label layoutX="213.0" layoutY="46.0" prefHeight="26.0" prefWidth="222.0" text="Please Check Your Application" textFill="#ab1340">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="96.0" prefHeight="18.0" prefWidth="125.0" text="Full Name                  : " />
+      <Label layoutX="48.0" layoutY="127.0" prefHeight="18.0" prefWidth="126.0" text="Father Name             :" />
+      <Label layoutX="48.0" layoutY="161.0" prefHeight="18.0" prefWidth="126.0" text="Mother Name           :" />
+      <Label layoutX="48.0" layoutY="200.0" prefHeight="18.0" prefWidth="126.0" text="NID                            :" />
+      <Label layoutX="44.0" layoutY="235.0" prefHeight="18.0" prefWidth="135.0" text="Phone No.                  :" />
+      <Label layoutX="44.0" layoutY="280.0" prefHeight="18.0" prefWidth="126.0" text="Email                          :" />
+      <Label fx:id="fullNameLabelField" layoutX="175.0" layoutY="96.0" prefHeight="18.0" prefWidth="357.0" />
+      <Label fx:id="fatherNameLabelField" layoutX="175.0" layoutY="127.0" prefHeight="18.0" prefWidth="358.0" />
+      <Label fx:id="motherNameLabelField" layoutX="175.0" layoutY="161.0" prefHeight="18.0" prefWidth="358.0" />
+      <Label fx:id="nidLabelField" layoutX="175.0" layoutY="200.0" prefHeight="18.0" prefWidth="358.0" />
+      <Label fx:id="phoneNoLabelField" layoutX="175.0" layoutY="235.0" prefHeight="18.0" prefWidth="358.0" />
+      <Label fx:id="emailLabelField" layoutX="175.0" layoutY="280.0" prefHeight="18.0" prefWidth="358.0" />
+      <Button layoutX="136.0" layoutY="329.0" mnemonicParsing="false" onAction="#saveAndSubmitButtonOnAction" prefHeight="26.0" prefWidth="135.0" text="Save &amp; Submit" />
+      <Button layoutX="362.0" layoutY="329.0" mnemonicParsing="false" onAction="#backAndGoToPersonalInformationButtonOnAction" prefHeight="26.0" prefWidth="126.0" text="Back" />
+   </children>
+</AnchorPane>

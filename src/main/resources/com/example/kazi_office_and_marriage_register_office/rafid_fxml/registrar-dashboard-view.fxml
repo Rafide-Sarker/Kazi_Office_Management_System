@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="registrarDashboardPane" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to bottom right, #2C7A7B, #16353D);" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kazi_office_and_marriage_register_office.Rafid.RegistrarDashBoardController">
+   <children>
+      <Pane layoutX="184.0" layoutY="127.0" prefHeight="434.0" prefWidth="550.0" style="-fx-background-color: #0E2227; -fx-background-radius: 8;">
+         <children>
+            <Button layoutX="135.0" layoutY="50.0" mnemonicParsing="false" onAction="#registerMarriageOnAction" prefHeight="50.0" prefWidth="280.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text=" Register Marriage">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="135.0" layoutY="125.0" mnemonicParsing="false" onAction="#registryManagementOnAction" prefHeight="50.0" prefWidth="280.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text=" Registry Management">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="135.0" layoutY="200.0" mnemonicParsing="false" onAction="#certificateManagementOnAction" prefHeight="50.0" prefWidth="280.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Certificate Management  ">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="179.0" layoutY="348.0" mnemonicParsing="false" onAction="#logoutOnAction" prefHeight="50.0" prefWidth="195.0" style="-fx-background-color: #1E3F46; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Logout">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="136.0" layoutY="272.0" mnemonicParsing="false" onAction="#generateReportsOnAction" prefHeight="50.0" prefWidth="280.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Generate Reports  ">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Label layoutX="276.0" layoutY="-71.0" style="-fx-text-fill: #F5F5F5;" text="KAZI OFFICE MANAGEMENT SYSTEM">
+         <font>
+            <Font name="Segoe UI Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="367.0" layoutY="86.0" style="-fx-text-fill: #F5F5F5;" text="Registrar Dashboard">
+         <font>
+            <Font name="Segoe UI Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="240.0" layoutY="37.0" style="-fx-text-fill: #F5F5F5;" text="KAZI OFFICE MANAGEMENT SYSTEM">
+         <font>
+            <Font name="Segoe UI Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="808.0" layoutY="14.0" text="Welcome, Kazi" textFill="#f4efef" />
+   </children>
+</AnchorPane>

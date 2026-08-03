@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="494.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kazi_office_and_marriage_register_office.sayed.GenerateDailyReportController">
+   <children>
+      <Label layoutX="57.0" layoutY="238.0" text="Date" />
+      <DatePicker layoutX="143.0" layoutY="41.0" />
+      <Label layoutX="47.0" layoutY="93.0" text="Report Type" />
+      <ComboBox layoutX="143.0" layoutY="89.0" prefWidth="150.0" />
+      <Label layoutX="143.0" layoutY="193.0" text="Daily Report" />
+      <Label layoutX="52.0" layoutY="275.0" text="Total Payment" />
+      <Label layoutX="51.0" layoutY="312.0" text="Total Revenue" />
+      <Label layoutX="52.0" layoutY="346.0" text="Total Refund" />
+      <Label layoutX="52.0" layoutY="380.0" text="Net Income" />
+      <TextField layoutX="170.0" layoutY="271.0" />
+      <TextField layoutX="170.0" layoutY="308.0" />
+      <TextField layoutX="170.0" layoutY="342.0" />
+      <TextField layoutX="170.0" layoutY="379.0" />
+      <TextField layoutX="168.0" layoutY="234.0" />
+      <Button layoutX="63.0" layoutY="142.0" mnemonicParsing="false" onAction="#generateReport" text="Generate Report" />
+      <Button layoutX="185.0" layoutY="142.0" mnemonicParsing="false" onAction="#BackOnAction" text="Back" />
+      <Label layoutX="57.0" layoutY="45.0" text="Date" />
+   </children>
+</AnchorPane>
