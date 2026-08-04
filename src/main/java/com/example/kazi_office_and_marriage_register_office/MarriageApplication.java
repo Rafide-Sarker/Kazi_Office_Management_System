@@ -5,15 +5,17 @@ import java.time.LocalDate;
 public class MarriageApplication {
     private String applicationID, status;
     private LocalDate applicationDate;
-    private Documents documents;  // composition
+    private Documents documents;// composition
+
+    public MarriageApplication(){
+        this.documents = new Documents();
+    }
 
     public MarriageApplication(String applicationID, String status, LocalDate applicationDate) {
         this.applicationID = applicationID;
         this.status = status;
         this.applicationDate = applicationDate;
-    }
-
-    public MarriageApplication() {
+        this.documents = new Documents();
     }
 
     public String getApplicationID() {
@@ -38,6 +40,14 @@ public class MarriageApplication {
 
     public void setApplicationDate(LocalDate applicationDate) {
         this.applicationDate = applicationDate;
+    }
+
+    public Documents getDocuments() {
+        return documents;
+    }
+
+    public void setDocuments(Documents documents) {
+        this.documents = documents;
     }
 
     @Override
