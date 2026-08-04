@@ -38,53 +38,51 @@
       <Pane prefHeight="200.0" prefWidth="270.0" style="-fx-background-color: #0E2227;" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="18.0" layoutY="11.0" text="Marriage ID" textFill="#f2ecec" />
-            <TextField layoutX="14.0" layoutY="37.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="rmsSearchMarriageIdTF" layoutX="14.0" layoutY="37.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
             <Label layoutX="16.0" layoutY="75.0" text="Bride Name" textFill="#f2ecec" />
-            <TextField layoutX="12.0" layoutY="101.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="rmsSearchBrideTF" layoutX="12.0" layoutY="101.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
             <Label layoutX="18.0" layoutY="136.0" text="Groom Name" textFill="#f2ecec" />
-            <TextField layoutX="14.0" layoutY="162.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
-            <Label layoutX="18.0" layoutY="196.0" text="NID" textFill="#f2ecec" />
-            <TextField layoutX="14.0" layoutY="222.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
-            <Label layoutX="16.0" layoutY="255.0" text="Date" textFill="#f2ecec" />
-            <Label layoutX="18.0" layoutY="318.0" text="Status" textFill="#f2ecec" />
-            <Button layoutX="16.0" layoutY="403.0" mnemonicParsing="false" onAction="#searchMarriageRecordFilterOnAction" prefWidth="110.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Search" />
-            <Button layoutX="137.0" layoutY="403.0" mnemonicParsing="false" onAction="#clearMarriageRecordFilterOnAction" prefWidth="110.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Clear" />
-            <ComboBox editable="true" layoutX="15.0" layoutY="346.0" prefHeight="25.0" prefWidth="244.0" promptText="Status" style="-fx-background-color: gray;" />
-            <DatePicker editable="true" layoutX="17.0" layoutY="279.0" prefHeight="25.0" prefWidth="240.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="rmsSearchGroomTF" layoutX="14.0" layoutY="162.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <Label layoutX="17.0" layoutY="194.0" text="Date" textFill="#f2ecec" />
+            <Label layoutX="19.0" layoutY="257.0" text="Status" textFill="#f2ecec" />
+            <Button layoutX="17.0" layoutY="342.0" mnemonicParsing="false" onAction="#searchMarriageRecordFilterOnAction" prefWidth="110.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Search" />
+            <Button layoutX="137.0" layoutY="342.0" mnemonicParsing="false" onAction="#clearMarriageRecordFilterOnAction" prefWidth="110.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Clear" />
+            <ComboBox fx:id="rmsSearchStatusComboBox" editable="true" layoutX="16.0" layoutY="285.0" prefHeight="25.0" prefWidth="244.0" promptText="Status" style="-fx-background-color: gray;" />
+            <DatePicker fx:id="rmsSearchDateDatePicker" editable="true" layoutX="18.0" layoutY="218.0" prefHeight="25.0" prefWidth="240.0" style="-fx-background-color: gray;" />
          </children>
       </Pane>
    </left>
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #16353D;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="27.0" layoutY="11.0" text="Appointment List" textFill="#f2ecec">
+            <Label layoutX="27.0" layoutY="11.0" text="Marriage Record List" textFill="#f2ecec">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TableView layoutX="17.0" layoutY="58.0" prefHeight="154.0" prefWidth="601.0" style="-fx-background-color: #214852;">
+            <TableView fx:id="rmsMarriageRecordListTV" layoutX="17.0" layoutY="58.0" prefHeight="154.0" prefWidth="601.0" style="-fx-background-color: #214852;">
                <columns>
-                  <TableColumn minWidth="75.20001029968262" prefWidth="97.59997367858887" text="Marriage ID" />
-                  <TableColumn minWidth="28.79998779296875" prefWidth="83.20001983642578" text="Date" />
-                  <TableColumn prefWidth="117.60000610351562" text="Bride" />
-                  <TableColumn prefWidth="105.60003662109375" text="Groom" />
-                  <TableColumn prefWidth="94.39990234375" text="Status" />
-                  <TableColumn prefWidth="101.60000610351562" text="Certificate No." />
+                  <TableColumn fx:id="rmsMarriageIdTC" minWidth="75.20001029968262" prefWidth="97.59997367858887" text="Marriage ID" />
+                  <TableColumn fx:id="rmsDateTC" minWidth="28.79998779296875" prefWidth="83.20001983642578" text="Date" />
+                  <TableColumn fx:id="rmsBrideTC" prefWidth="117.60000610351562" text="Bride" />
+                  <TableColumn fx:id="rmsGroomTC" prefWidth="105.60003662109375" text="Groom" />
+                  <TableColumn fx:id="rmsStatusTC" prefWidth="94.39990234375" text="Status" />
+                  <TableColumn fx:id="rmsCertificateNoTC" prefWidth="101.60000610351562" text="Certificate No." />
                </columns>
             </TableView>
             <Label layoutX="243.0" layoutY="227.0" text="Selected Marriage Record" textFill="#f2ecec" />
             <Label layoutX="95.0" layoutY="270.0" text="Marriage ID" textFill="#f2ecec" />
-            <TextField layoutX="184.0" layoutY="266.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="selectedMarriageRecordTF" editable="false" layoutX="184.0" layoutY="266.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
             <Label layoutX="95.0" layoutY="308.0" text="Bride Name" textFill="#f2ecec" />
-            <TextField layoutX="184.0" layoutY="304.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="selectedBrideNameTF" editable="false" layoutX="184.0" layoutY="304.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
             <Label layoutX="95.0" layoutY="345.0" text="Groom Name" textFill="#f2ecec" />
-            <TextField layoutX="184.0" layoutY="341.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="selectedGroomNameTF" editable="false" layoutX="184.0" layoutY="341.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
             <Label layoutX="95.0" layoutY="380.0" text="Marriage Date" textFill="#f2ecec" />
-            <TextField layoutX="184.0" layoutY="376.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="selectedMarriageDateTF" editable="false" layoutX="184.0" layoutY="376.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
             <Label layoutX="95.0" layoutY="417.0" text="Certificate No." textFill="#f2ecec" />
-            <TextField layoutX="184.0" layoutY="413.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="selectedCertificateNoTF" editable="false" layoutX="184.0" layoutY="413.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
             <Label layoutX="95.0" layoutY="453.0" text="Status" textFill="#f2ecec" />
-            <TextField layoutX="184.0" layoutY="449.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="selectedStatusTF" editable="false" layoutX="184.0" layoutY="449.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
          </children>
       </AnchorPane>
    </center>

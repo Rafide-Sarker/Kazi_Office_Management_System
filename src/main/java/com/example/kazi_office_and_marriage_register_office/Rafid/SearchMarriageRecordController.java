@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -13,6 +14,42 @@ import java.io.IOException;
 public class SearchMarriageRecordController {
     @javafx.fxml.FXML
     private BorderPane searchMarriageRecordsPane;
+    @javafx.fxml.FXML
+    private TextField rmsSearchGroomTF;
+    @javafx.fxml.FXML
+    private TableColumn rmsCertificateNoTC;
+    @javafx.fxml.FXML
+    private TableView rmsMarriageRecordListTV;
+    @javafx.fxml.FXML
+    private ComboBox rmsSearchStatusComboBox;
+    @javafx.fxml.FXML
+    private TableColumn rmsBrideTC;
+    @javafx.fxml.FXML
+    private TableColumn rmsGroomTC;
+    @javafx.fxml.FXML
+    private TextField selectedCertificateNoTF;
+    @javafx.fxml.FXML
+    private TextField selectedStatusTF;
+    @javafx.fxml.FXML
+    private TableColumn rmsDateTC;
+    @javafx.fxml.FXML
+    private TextField selectedMarriageRecordTF;
+    @javafx.fxml.FXML
+    private TextField selectedBrideNameTF;
+    @javafx.fxml.FXML
+    private TextField selectedMarriageDateTF;
+    @javafx.fxml.FXML
+    private TextField rmsSearchBrideTF;
+    @javafx.fxml.FXML
+    private TableColumn rmsStatusTC;
+    @javafx.fxml.FXML
+    private TextField rmsSearchMarriageIdTF;
+    @javafx.fxml.FXML
+    private TableColumn rmsMarriageIdTC;
+    @javafx.fxml.FXML
+    private TextField selectedGroomNameTF;
+    @javafx.fxml.FXML
+    private DatePicker rmsSearchDateDatePicker;
 
     @javafx.fxml.FXML
     public void searchMarriageRecordFilterOnAction(ActionEvent actionEvent) {

@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -40,15 +42,17 @@
       <VBox prefHeight="514.0" prefWidth="270.0" style="-fx-background-color: #0E2227; -fx-padding: 20; -fx-spacing: 15;" BorderPane.alignment="CENTER">
          <children>
             <Label style="-fx-text-fill: #F5F5F5;" text="Application ID" />
-            <TextField editable="false" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="raApplicationIdTF" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: gray;" />
             <Label style="-fx-text-fill: #F5F5F5;" text="Bride Name" />
-            <TextField editable="false" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="raSearchBrideNameTF" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: gray;" />
             <Label style="-fx-text-fill: #F5F5F5;" text="Groom Name" />
-            <TextField editable="false" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="raSearchGroomNameTF" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: gray;" />
             <Label style="-fx-text-fill: #F5F5F5;" text="Application Date" />
-            <TextField editable="false" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: gray;" />
+            <DatePicker fx:id="raApplicationDateDatePicker" prefHeight="35.0" prefWidth="230.0" />
             <Label style="-fx-text-fill: #F5F5F5;" text="Status" />
-            <TextField editable="false" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: gray;" />
+            <ComboBox fx:id="raSearchStatusComboBox" editable="true" prefHeight="26.0" prefWidth="226.0" promptText="Status" style="-fx-background-color: gray;" />
+            <Button mnemonicParsing="false" onAction="#searchReviewApplicationOnAction" prefHeight="26.0" prefWidth="231.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Search" />
+            <Button mnemonicParsing="false" onAction="#clearSearchReviewApplicationOnAction" prefHeight="26.0" prefWidth="229.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Clear" />
          </children>
       </VBox>
    </left>
@@ -81,10 +85,10 @@
                         <Label text="NID" textFill="#efe7e7" GridPane.rowIndex="1" />
                         <Label text="Date of Birth" textFill="#efe7e7" GridPane.columnIndex="2" />
                         <Label text="Phone" textFill="#efe7e7" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <TextField prefHeight="26.0" prefWidth="406.0" style="-fx-background-color: gray;" GridPane.columnIndex="1" />
-                        <TextField prefHeight="26.0" prefWidth="156.0" style="-fx-background-color: gray;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField style="-fx-background-color: gray;" GridPane.columnIndex="3" />
-                        <TextField style="-fx-background-color: gray;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <TextField fx:id="raBrideNameTF" editable="false" prefHeight="26.0" prefWidth="406.0" style="-fx-background-color: gray;" GridPane.columnIndex="1" />
+                        <TextField fx:id="raBrideNIDTF" editable="false" prefHeight="26.0" prefWidth="156.0" style="-fx-background-color: gray;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="raBrideDOBTF" editable="false" style="-fx-background-color: gray;" GridPane.columnIndex="3" />
+                        <TextField fx:id="raBridePhoneTF" editable="false" style="-fx-background-color: gray;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                      </children>
                      <padding>
                         <Insets right="20.0" />
@@ -98,7 +102,7 @@
                            </padding>
                         </Label>
                         <Region prefHeight="28.0" prefWidth="26.0" />
-                        <TextField prefHeight="40.0" prefWidth="489.0" style="-fx-background-color: gray;" />
+                        <TextField fx:id="raBrideAddressTF" editable="false" prefHeight="40.0" prefWidth="489.0" style="-fx-background-color: gray;" />
                      </children>
                      <padding>
                         <Insets top="5.0" />
@@ -125,10 +129,10 @@
                         <Label text="NID" textFill="#efe7e7" GridPane.rowIndex="1" />
                         <Label text="Date of Birth" textFill="#efe7e7" GridPane.columnIndex="2" />
                         <Label text="Phone" textFill="#efe7e7" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <TextField prefHeight="26.0" prefWidth="406.0" style="-fx-background-color: gray;" GridPane.columnIndex="1" />
-                        <TextField prefHeight="26.0" prefWidth="156.0" style="-fx-background-color: gray;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <TextField style="-fx-background-color: gray;" GridPane.columnIndex="3" />
-                        <TextField style="-fx-background-color: gray;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                        <TextField fx:id="raGroomNameTF" editable="false" prefHeight="26.0" prefWidth="406.0" style="-fx-background-color: gray;" GridPane.columnIndex="1" />
+                        <TextField fx:id="raGroomNidTF" editable="false" prefHeight="26.0" prefWidth="156.0" style="-fx-background-color: gray;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="raGroomDobTF" editable="false" style="-fx-background-color: gray;" GridPane.columnIndex="3" />
+                        <TextField fx:id="raGroomPhoneTF" editable="false" style="-fx-background-color: gray;" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                      </children>
                      <padding>
                         <Insets right="20.0" />
@@ -142,7 +146,7 @@
                            </padding>
                         </Label>
                         <Region prefHeight="28.0" prefWidth="26.0" />
-                        <TextField prefHeight="40.0" prefWidth="489.0" style="-fx-background-color: gray;" />
+                        <TextField fx:id="raGroomAddressTF" editable="false" prefHeight="40.0" prefWidth="489.0" style="-fx-background-color: gray;" />
                      </children>
                      <padding>
                         <Insets top="5.0" />
@@ -155,14 +159,14 @@
                               <Insets left="20.0" />
                            </padding>
                         </Label>
-                        <ListView layoutX="14.0" layoutY="25.0" prefHeight="96.0" prefWidth="234.0" style="-fx-background-color: gray; -fx-background-radius: 5;" />
+                        <ListView fx:id="raUploadedDocumentListView" layoutX="14.0" layoutY="25.0" prefHeight="96.0" prefWidth="234.0" style="-fx-background-color: gray; -fx-background-radius: 5;" />
                         <Label layoutX="305.0" layoutY="1.0" text="Witnesses" textFill="#fafafc">
                            <padding>
                               <Insets left="20.0" />
                            </padding>
                         </Label>
-                        <TextField layoutX="323.0" layoutY="24.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: gray;" />
-                        <TextField layoutX="323.0" layoutY="61.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: gray;" />
+                        <TextField fx:id="raWitness1TF" editable="false" layoutX="323.0" layoutY="24.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: gray;" />
+                        <TextField fx:id="raWitness2TF" editable="false" layoutX="323.0" layoutY="61.0" prefHeight="26.0" prefWidth="213.0" style="-fx-background-color: gray;" />
                         <Button layoutX="30.0" layoutY="168.0" mnemonicParsing="false" onAction="#approveMarriageOnAction" prefHeight="29.0" prefWidth="162.0" style="-fx-background-color: #2E8B57; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Approve Marriage">
                            <font>
                               <Font name="System Bold" size="16.0" />
@@ -173,9 +177,9 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Button>
-                        <CheckBox layoutX="59.0" layoutY="129.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="104.0" text="Verify Bride" textFill="#eadbdb" />
-                        <CheckBox layoutX="305.0" layoutY="129.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="104.0" text="Verify Groom" textFill="#eadbdb" />
-                        <Button layoutX="163.0" layoutY="213.0" mnemonicParsing="false" onAction="#generateCirtificateOnAction" prefHeight="36.0" prefWidth="182.0" style="-fx-background-color: #2E8B57; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Generate Certificate">
+                        <CheckBox fx:id="verifyBrideCheckBox" layoutX="59.0" layoutY="129.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="104.0" text="Verify Bride" textFill="#eadbdb" />
+                        <CheckBox fx:id="verifyGroomCheckBox" layoutX="305.0" layoutY="129.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="104.0" text="Verify Groom" textFill="#eadbdb" />
+                        <Button disable="true" layoutX="163.0" layoutY="213.0" mnemonicParsing="false" onAction="#generateCirtificateOnAction" prefHeight="36.0" prefWidth="182.0" style="-fx-background-color: #2E8B57; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Generate Certificate">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
