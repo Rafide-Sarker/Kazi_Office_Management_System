@@ -48,7 +48,7 @@ public class PersonalizationController
     public void backAndGoToMarriageConsentPageButtonOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("yasin/marriageConsent-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Stage nextStage = new Stage();
+        Stage nextStage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         nextStage.setTitle("Marriage Consent!");
         nextStage.setScene(scene);
         nextStage.show();

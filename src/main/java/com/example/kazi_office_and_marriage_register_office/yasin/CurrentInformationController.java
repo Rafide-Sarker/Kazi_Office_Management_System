@@ -29,7 +29,7 @@ public class CurrentInformationController
     public void backAndGoToDashBoard(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("yasin/DashBoard-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Stage nextStage = new Stage();
+        Stage nextStage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         nextStage.setTitle("DashBoard!");
         nextStage.setScene(scene);
         nextStage.show();

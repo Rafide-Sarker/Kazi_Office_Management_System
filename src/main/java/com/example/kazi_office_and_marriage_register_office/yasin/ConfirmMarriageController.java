@@ -28,7 +28,7 @@ public class ConfirmMarriageController
     public void backAndGoToPersonalInformationPageButtonOnActon(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("yasin/personal-information-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        Stage nextStage = new Stage();
+        Stage nextStage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         nextStage.setTitle("Personal Information!");
         nextStage.setScene(scene);
         nextStage.show();
