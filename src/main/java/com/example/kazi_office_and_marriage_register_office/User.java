@@ -86,6 +86,26 @@ public class User {
                 ", phoneNumber=" + phoneNumber +
                 '}';
     }
+
+    public Boolean tryToLogin(){
+        return true;
+    }
+
+    public Boolean forgetPassword(){
+        return true;
+    }
+
+    public Boolean setNewPassword(){
+        return true;
+    }
+
+    public Boolean createNewAccount(){
+        return true;
+    }
+
+    public User findUser(){
+        return null;
+    }
 }
 
 
