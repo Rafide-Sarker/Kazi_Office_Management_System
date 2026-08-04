@@ -5,7 +5,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -16,6 +18,36 @@ public class GenerateCertificateController {
     private Label titleLabel;
     @javafx.fxml.FXML
     private BorderPane generateMarriageCertificatePane;
+    @javafx.fxml.FXML
+    private TextField gmcWitness1TextField;
+    @javafx.fxml.FXML
+    private TextField gmcCertificateNoTextField;
+    @javafx.fxml.FXML
+    private TextField gmcGroomNidTextField;
+    @javafx.fxml.FXML
+    private TextField gmcRegistrationNoTextField;
+    @javafx.fxml.FXML
+    private TextField gmcBrideNameTextField;
+    @javafx.fxml.FXML
+    private DatePicker gmcBrideDobdatePicker;
+    @javafx.fxml.FXML
+    private TextField gmcBrideAddressTextField;
+    @javafx.fxml.FXML
+    private TextField gmcGroomNameTextField;
+    @javafx.fxml.FXML
+    private TextField gmcRegisteredByTextField;
+    @javafx.fxml.FXML
+    private TextField gmcWitness2TextField;
+    @javafx.fxml.FXML
+    private TextField gmcGroomAddressTextField;
+    @javafx.fxml.FXML
+    private TextField gmcBrideNidTextField;
+    @javafx.fxml.FXML
+    private DatePicker gmcMarriageDateDatePicker;
+    @javafx.fxml.FXML
+    private DatePicker gmcDobDatePicker;
+    @javafx.fxml.FXML
+    private TextField gmcMarriageIdTextField;
 
 
     @javafx.fxml.FXML

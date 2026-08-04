@@ -5,6 +5,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -13,6 +16,24 @@ import java.io.IOException;
 public class GenerateReportController {
     @javafx.fxml.FXML
     private BorderPane generateReportPane;
+    @javafx.fxml.FXML
+    private TextField grActiveRecordTextField;
+    @javafx.fxml.FXML
+    private DatePicker grToDateDatePicker;
+    @javafx.fxml.FXML
+    private ComboBox grReportTypeComboBox;
+    @javafx.fxml.FXML
+    private ComboBox grStatusComboBox;
+    @javafx.fxml.FXML
+    private TextField grTotalRecordTextField;
+    @javafx.fxml.FXML
+    private TextField grArchivedRecordTextField;
+    @javafx.fxml.FXML
+    private DatePicker grFromDateDatePicker;
+
+    public void initialize(){
+
+    }
 
     @javafx.fxml.FXML
     public void generateReportOnAction(ActionEvent actionEvent) {

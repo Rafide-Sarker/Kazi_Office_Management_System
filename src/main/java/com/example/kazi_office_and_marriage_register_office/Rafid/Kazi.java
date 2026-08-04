@@ -18,6 +18,9 @@ public class Kazi extends User {
         super(userID, userName, email, address, role, password, phoneNumber);
     }
 
+    public Kazi() {
+    }
+
     public String getKaziId() {
         return kaziId;
     }

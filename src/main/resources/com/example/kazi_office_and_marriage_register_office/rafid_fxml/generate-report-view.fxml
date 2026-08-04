@@ -49,15 +49,15 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <DatePicker layoutX="16.0" layoutY="139.0" prefHeight="25.0" prefWidth="244.0" />
-            <ComboBox layoutX="19.0" layoutY="79.0" prefHeight="25.0" prefWidth="239.0" promptText="Status" style="-fx-background-color: Gray;" />
+            <DatePicker fx:id="grFromDateDatePicker" layoutX="16.0" layoutY="139.0" prefHeight="25.0" prefWidth="244.0" />
+            <ComboBox fx:id="grReportTypeComboBox" editable="true" layoutX="19.0" layoutY="79.0" prefHeight="25.0" prefWidth="239.0" promptText="Status" style="-fx-background-color: Gray;" />
             <Label layoutX="18.0" layoutY="14.0" text="Report Options" textFill="#f2ecec">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <DatePicker layoutX="17.0" layoutY="194.0" prefHeight="25.0" prefWidth="244.0" />
-            <ComboBox layoutX="16.0" layoutY="250.0" prefHeight="25.0" prefWidth="239.0" promptText="Status" style="-fx-background-color: gray;" />
+            <DatePicker fx:id="grToDateDatePicker" layoutX="17.0" layoutY="194.0" prefHeight="25.0" prefWidth="244.0" />
+            <ComboBox fx:id="grStatusComboBox" editable="true" layoutX="16.0" layoutY="250.0" prefHeight="25.0" prefWidth="239.0" promptText="Status" style="-fx-background-color: gray;" />
          </children>
       </Pane>
    </left>
@@ -75,11 +75,11 @@
                </font>
             </Label>
             <Label layoutX="100.0" layoutY="132.0" text="Total Record" textFill="#f2ecec" />
-            <TextField layoutX="205.0" layoutY="127.0" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="grTotalRecordTextField" editable="false" layoutX="205.0" layoutY="127.0" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: gray;" />
             <Label layoutX="100.0" layoutY="208.0" text="Archived Record" textFill="#f2ecec" />
-            <TextField layoutX="205.0" layoutY="203.0" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="grArchivedRecordTextField" editable="false" layoutX="205.0" layoutY="203.0" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: gray;" />
             <Label layoutX="100.0" layoutY="169.0" text="Active Record" textFill="#f2ecec" />
-            <TextField layoutX="205.0" layoutY="164.0" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="grActiveRecordTextField" editable="false" layoutX="205.0" layoutY="164.0" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: gray;" />
             <Button layoutX="145.0" layoutY="257.0" mnemonicParsing="false" onAction="#downloadReeportOnAction" prefHeight="23.0" prefWidth="195.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Download Report">
                <font>
                   <Font name="System Bold" size="12.0" />
