@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kazi_office_and_marriage_register_office.sayed.ViewSystemLogsController">
+   <children>
+      <Label layoutX="233.0" layoutY="14.0" text="View System Logs" textFill="RED">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="59.0" text="Log Type" />
+      <ComboBox fx:id="logTypeComboBox" layoutX="93.0" layoutY="76.0" prefWidth="150.0" />
+      <Button layoutX="264.0" layoutY="76.0" mnemonicParsing="false" onAction="#viewLogsButtonOnAction" text="View Logs" />
+      <Button layoutX="264.0" layoutY="310.0" mnemonicParsing="false" onAction="#backAndGoToDashboardButtonOnAction" text="Back" />
+      <Label layoutX="93.0" layoutY="151.0" text="System Log Information" />
+      <TextArea fx:id="systemLogInformationTextArea" editable="false" layoutX="93.0" layoutY="173.0" prefHeight="99.0" prefWidth="418.0" promptText="Logs will appear here" wrapText="true" />
+      <Label layoutX="93.0" layoutY="280.0" text="Log Status:" />
+      <Label fx:id="logStatusLabel" layoutX="168.0" layoutY="280.0" prefHeight="17.0" prefWidth="274.0" />
+   </children>
+</AnchorPane>

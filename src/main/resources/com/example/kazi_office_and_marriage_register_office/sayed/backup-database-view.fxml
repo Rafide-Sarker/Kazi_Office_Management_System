@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kazi_office_and_marriage_register_office.sayed.BackupDatabaseController">
+   <children>
+      <Label layoutX="235.0" layoutY="20.0" text="Backup Database" textFill="RED">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="67.0" text="Backup Type" />
+      <Label layoutX="59.0" layoutY="150.0" text="Backup Loacation" />
+      <Label layoutX="59.0" layoutY="210.0" text="Backup File Name" />
+      <ComboBox fx:id="backupTypeComboBox" layoutX="59.0" layoutY="84.0" prefWidth="150.0" promptText="Select Backup Type" />
+      <TextField fx:id="backupLocationTextField" layoutX="60.0" layoutY="167.0" text="No Location Selected" />
+      <Button layoutX="235.0" layoutY="167.0" mnemonicParsing="false" onAction="#chooseFolderButtonOnAction" text="Choose Folder" />
+      <Label fx:id="backupFileNameLabel" layoutX="60.0" layoutY="237.0" prefHeight="17.0" prefWidth="301.0" />
+      <Button layoutX="128.0" layoutY="282.0" mnemonicParsing="false" onAction="#startBackupButtonOnAction" text="Start Backup" />
+      <Button layoutX="333.0" layoutY="283.0" mnemonicParsing="false" onAction="#backAndGoToDashboardButtonOnAction" text="Back" />
+   </children>
+</AnchorPane>
