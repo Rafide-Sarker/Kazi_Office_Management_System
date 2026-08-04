@@ -5,15 +5,18 @@ public class Payment {
     private double amount;
     private String paymentMethod;
     private String paymentStatus;
+    private Receipt receipt;  // composition
+
+    public Payment (){
+        this.receipt = new Receipt();
+    }
 
     public Payment(String paymentId, double amount, String paymentMethod, String paymentStatus) {
         this.paymentId = paymentId;
         this.amount = amount;
         this.paymentMethod = paymentMethod;
         this.paymentStatus = paymentStatus;
-    }
-
-    public Payment() {
+        this.receipt = new Receipt();
     }
 
     public String getPaymentId() {
@@ -46,6 +49,14 @@ public class Payment {
 
     public void setPaymentStatus(String paymentStatus) {
         this.paymentStatus = paymentStatus;
+    }
+
+    public Receipt getReceipt() {
+        return receipt;
+    }
+
+    public void setReceipt(Receipt receipt) {
+        this.receipt = receipt;
     }
 
     @Override

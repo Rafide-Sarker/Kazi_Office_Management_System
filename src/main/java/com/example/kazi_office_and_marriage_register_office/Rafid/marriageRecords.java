@@ -1,17 +1,21 @@
 package com.example.kazi_office_and_marriage_register_office.Rafid;
 
+import com.example.kazi_office_and_marriage_register_office.MarriageCertificate;
+
 import java.time.LocalDate;
 
 public class marriageRecords {
     private String recordId, registrationNo, status;
     private LocalDate registrationDate,MarriageDate;
 
-    public marriageRecords(String recordId, String registrationNo, String status, LocalDate registrationDate, LocalDate marriageDate) {
+    private MarriageCertificate marriageCertificate;
+
+    public marriageRecords(String recordId, String registrationNo, String status, LocalDate registrationDate, LocalDate marriageDate , MarriageCertificate marriageCertificate) {
         this.recordId = recordId;
         this.registrationNo = registrationNo;
         this.status = status;
         this.registrationDate = registrationDate;
-        MarriageDate = marriageDate;
+        this.marriageCertificate = marriageCertificate;
     }
 
     public String getRecordId() {
@@ -48,6 +52,14 @@ public class marriageRecords {
 
     public LocalDate getMarriageDate() {
         return MarriageDate;
+    }
+
+    public MarriageCertificate getMarriageCertificate() {
+        return marriageCertificate;
+    }
+
+    public void setMarriageCertificate(MarriageCertificate marriageCertificate) {
+        this.marriageCertificate = marriageCertificate;
     }
 
     public void setMarriageDate(LocalDate marriageDate) {

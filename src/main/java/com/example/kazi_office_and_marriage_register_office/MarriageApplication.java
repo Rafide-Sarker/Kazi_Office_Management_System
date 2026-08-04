@@ -5,6 +5,7 @@ import java.time.LocalDate;
 public class MarriageApplication {
     private String applicationID, status;
     private LocalDate applicationDate;
+    private Documents documents;  // composition
 
     public MarriageApplication(String applicationID, String status, LocalDate applicationDate) {
         this.applicationID = applicationID;
@@ -51,6 +52,7 @@ public class MarriageApplication {
     public void updateStatus(){
         return;
     }
+
     public void submit(){
         return;
     }
