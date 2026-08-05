@@ -3,9 +3,11 @@ package com.example.kazi_office_and_marriage_register_office;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class User {
+public class User implements Serializable {
+    private static final long serialVersionUID = 1L;
     public String userID, userName, email, address, role;
     protected String password;
     public int phoneNumber;
@@ -106,6 +108,10 @@ public class User {
     public static User registrar = new User("Registrar", "Registrar", "registrar@gmail.com", "", "Registrar", "87654321", Integer.parseInt("01616161616"));
 
     public static <T> void writeBinaryFile(String pathName, T object){
+
+        System.out.println(object.getClass());
+        System.out.println(object instanceof java.io.Serializable);
+
         try {
             File f = new File(pathName);
             FileOutputStream fos = null;
@@ -121,7 +127,8 @@ public class User {
             oos.close();
 
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            e.printStackTrace();
+            //System.out.println(e.getMessage());
         }
     }
 

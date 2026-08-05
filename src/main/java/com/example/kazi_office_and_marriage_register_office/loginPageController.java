@@ -8,7 +8,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 
 public class loginPageController {
     @javafx.fxml.FXML
@@ -36,9 +36,25 @@ public class loginPageController {
     @javafx.fxml.FXML
     public void loginButtonOnAction(ActionEvent actionEvent) throws IOException {
         try{
-            if (selectRoleUserLoginComboBox.getValue().equals("Bride") ||selectRoleUserLoginComboBox.getValue().equals("Groom") ){
-                loginMethod("yasin/DashBoard-view.fxml", actionEvent);
-            } else if (selectRoleUserLoginComboBox.getValue().equals("Kazi")) {
+            if (selectRoleUserLoginComboBox.getValue().equals("Bride")){
+
+                User user = login(loginPageUserNameTF.getText() , loginPagePasswordPF.getText(), selectRoleUserLoginComboBox.getValue());
+                if (user == null){
+                    Methods.myAlert("Invalid Username, Password or Role");
+                } else{
+                    loginMethod("yasin/DashBoard-view.fxml", actionEvent);
+                }
+            }
+            else if (selectRoleUserLoginComboBox.getValue().equals("Groom")){
+
+                User user = login(loginPageUserNameTF.getText() , loginPagePasswordPF.getText(), selectRoleUserLoginComboBox.getValue());
+                if (user == null){
+                    Methods.myAlert("Invalid Username, Password or Role");
+                } else{
+                    loginMethod("yasin/DashBoard-view.fxml", actionEvent);
+                }
+            }
+            else if (selectRoleUserLoginComboBox.getValue().equals("Kazi")) {
                 if (User.kazi.getUserName().equals(loginPageUserNameTF.getText()) && User.kazi.getPassword().equals(loginPagePasswordPF.getText())){
                     loginMethod("rafid_fxml/kazi-dashboard-view.fxml", actionEvent);
                 }else {
@@ -82,4 +98,39 @@ public class loginPageController {
         nextStage.setScene(scene);
         nextStage.show();
     }
+
+    public static User login(String username, String password, String role) {
+
+        File file = new File("Users.bin");
+
+        if (!file.exists()) {
+            return null;
+        }
+
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true) {
+
+                User user = (User) ois.readObject();
+
+                if (user.getUserName().equals(username)
+                        && user.getPassword().equals(password)
+                        && user.getRole().equals(role)) {
+
+                    ois.close();
+                    return user;
+                }
+            }
+
+        } catch (EOFException e) {
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
 }

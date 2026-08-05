@@ -6,7 +6,14 @@ public class Methods {
     public static void myAlert(String alertText){
         Alert a = new Alert(Alert.AlertType.ERROR);
         a.setContentText(alertText);
-        a.show();
+        a.showAndWait();
+        return;
+    }
+
+    public static void Alert(String alertText) {
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText(alertText);
+        a.showAndWait();
         return;
     }
 }
