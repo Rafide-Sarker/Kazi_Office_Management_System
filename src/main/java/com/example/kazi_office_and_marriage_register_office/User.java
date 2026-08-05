@@ -106,6 +106,8 @@ public class User implements Serializable {
     // Defined Users
     public static User  kazi = new User("Kazi", "Kazi", "kazi@gmail.com", "", "Kazi", "12345678", Integer.parseInt("01616161616"));
     public static User registrar = new User("Registrar", "Registrar", "registrar@gmail.com", "", "Registrar", "87654321", Integer.parseInt("01616161616"));
+    public static User accountant = new User ("Accountant","Accountant","accountant@gmail.com","","Accountant","12345678",Integer.parseInt("01970885894"));
+    public static User systemAdmin = new User ("Admin","Admin","admin@gmail.com","","Admin","11111111",Integer.parseInt("01970885894"));
 
     public static <T> void writeBinaryFile(String pathName, T object){
 

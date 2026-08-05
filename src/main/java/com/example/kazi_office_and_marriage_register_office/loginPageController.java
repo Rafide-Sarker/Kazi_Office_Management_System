@@ -67,11 +67,21 @@ public class loginPageController {
                     Methods.myAlert("Wrong User Name or Password");
                 }
             } else if (selectRoleUserLoginComboBox.getValue().equals("Accountant")) {
-                loginMethod("sayed/dashboard-view.fxml", actionEvent);
+                if (User.accountant.getUserName().equals(loginPageUserNameTF.getText()) && User.accountant.getPassword().equals(loginPagePasswordPF.getText())){
+                    loginMethod("sayed/dashboard-view.fxml", actionEvent);
+                }else {
+                    Methods.myAlert("Wrong User Name or Password");
+                }
+
             } else if (selectRoleUserLoginComboBox.getValue().equals("Witness")){
                 loginMethod("Bushra FXML/WitnessDashboard.fxml", actionEvent);
             }else if (selectRoleUserLoginComboBox.getValue().equals("System Admin")){
-                loginMethod("sayed/system-admin-dashboard.fxml",actionEvent);
+                if (User.systemAdmin.getUserName().equals(loginPageUserNameTF.getText()) && User.systemAdmin.getPassword().equals(loginPagePasswordPF.getText())){
+                    loginMethod("sayed/dashboard-view.fxml", actionEvent);
+                }else {
+                    Methods.myAlert("Wrong User Name or Password");
+                }
+
             }
         } catch (Exception e){
             System.out.println(e.getMessage());
