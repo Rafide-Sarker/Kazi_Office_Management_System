@@ -13,18 +13,35 @@ import java.io.IOException;
 
 public class ReviewApplicationController
 {
+
     @javafx.fxml.FXML
-    private Label nidLabelField;
+    private Label motherNameBrideLabelField;
     @javafx.fxml.FXML
-    private Label fatherNameLabelField;
+    private Label fatherNameBrideLabelField;
     @javafx.fxml.FXML
-    private Label emailLabelField;
+    private Label phoneNoBrideLabelField;
     @javafx.fxml.FXML
-    private Label phoneNoLabelField;
+    private Label nidBrideLabelField;
     @javafx.fxml.FXML
-    private Label motherNameLabelField;
+    private Label nidGroomLabelField;
     @javafx.fxml.FXML
-    private Label fullNameLabelField;
+    private Label emailBrideLabelField;
+    @javafx.fxml.FXML
+    private Label fullNameBrideLabelField;
+    @javafx.fxml.FXML
+    private Label emailGroomLabelField;
+    @javafx.fxml.FXML
+    private Label fullNameGroomLabelField;
+    @javafx.fxml.FXML
+    private Label fatherNameGroomLabelField;
+    @javafx.fxml.FXML
+    private Label motherNameGroomLabelField;
+    @javafx.fxml.FXML
+    private Label phoneNoGroomLabelField;
+    @javafx.fxml.FXML
+    private Label witness2Label;
+    @javafx.fxml.FXML
+    private Label witness1Label;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -32,6 +49,7 @@ public class ReviewApplicationController
 
     @javafx.fxml.FXML
     public void saveAndSubmitButtonOnAction(ActionEvent actionEvent) throws IOException {
+
         // applicationId = ??
 
         Alert myAlert = new Alert(Alert.AlertType.INFORMATION);
