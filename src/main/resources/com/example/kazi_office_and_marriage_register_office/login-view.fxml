@@ -14,8 +14,8 @@
    <children>
       <Pane layoutX="199.0" layoutY="128.0" prefHeight="434.0" prefWidth="500.0" style="-fx-background-color: #0E2227; -fx-background-radius: 8;">
          <children>
-            <TextField layoutX="100.0" layoutY="38.0" prefHeight="40.0" prefWidth="300.0" promptText="Username" />
-            <PasswordField layoutX="100.0" layoutY="108.0" prefHeight="40.0" prefWidth="300.0" promptText="password" />
+            <TextField fx:id="loginPageUserNameTF" layoutX="100.0" layoutY="38.0" prefHeight="40.0" prefWidth="300.0" promptText="Username" />
+            <PasswordField fx:id="loginPagePasswordPF" layoutX="100.0" layoutY="108.0" prefHeight="40.0" prefWidth="300.0" promptText="password" />
             <ComboBox fx:id="selectRoleUserLoginComboBox" layoutX="100.0" layoutY="176.0" prefHeight="40.0" prefWidth="300.0" promptText="Select Role" style="-fx-border-color: #D9D9D9; -fx-border-radius: 5;" />
             <Hyperlink layoutX="195.0" layoutY="236.0" onAction="#forgetPasswordButtonOnAction" text="Forgot Password" />
             <Button layoutX="165.0" layoutY="276.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: #1E3F46; -fx-text-fill: #F5F5F5; -fx-background-radius: 8;" text="LOGIN">

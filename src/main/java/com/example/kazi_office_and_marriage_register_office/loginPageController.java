@@ -4,8 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -16,6 +15,10 @@ public class loginPageController {
     private Label Hudai;
     @javafx.fxml.FXML
     private ComboBox<String> selectRoleUserLoginComboBox;
+    @javafx.fxml.FXML
+    private TextField loginPageUserNameTF;
+    @javafx.fxml.FXML
+    private PasswordField loginPagePasswordPF;
 
     public void initialize(){
         selectRoleUserLoginComboBox.getItems().setAll("Bride", "Groom","Kazi","Registrar","Witness","Accountant","System Admin");
@@ -32,18 +35,30 @@ public class loginPageController {
 
     @javafx.fxml.FXML
     public void loginButtonOnAction(ActionEvent actionEvent) throws IOException {
-        if (selectRoleUserLoginComboBox.getValue().equals("Bride") ||selectRoleUserLoginComboBox.getValue().equals("Groom") ){
-            loginMethod("yasin/DashBoard-view.fxml", actionEvent);
-        } else if (selectRoleUserLoginComboBox.getValue().equals("Kazi")) {
-            loginMethod("rafid_fxml/kazi-dashboard-view.fxml", actionEvent);
-        } else if (selectRoleUserLoginComboBox.getValue().equals("Registrar")) {
-            loginMethod("rafid_fxml/registrar-dashboard-view.fxml", actionEvent);
-        } else if (selectRoleUserLoginComboBox.getValue().equals("Accountant")) {
-            loginMethod("sayed/dashboard-view.fxml", actionEvent);
-        } else if (selectRoleUserLoginComboBox.getValue().equals("Witness")){
-            loginMethod("Bushra FXML/WitnessDashboard.fxml", actionEvent);
-        }else if (selectRoleUserLoginComboBox.getValue().equals("System Admin")){
-            loginMethod("sayed/system-admin-dashboard.fxml",actionEvent);
+        try{
+            if (selectRoleUserLoginComboBox.getValue().equals("Bride") ||selectRoleUserLoginComboBox.getValue().equals("Groom") ){
+                loginMethod("yasin/DashBoard-view.fxml", actionEvent);
+            } else if (selectRoleUserLoginComboBox.getValue().equals("Kazi")) {
+                if (User.kazi.getUserName().equals(loginPageUserNameTF.getText()) && User.kazi.getPassword().equals(loginPagePasswordPF.getText())){
+                    loginMethod("rafid_fxml/kazi-dashboard-view.fxml", actionEvent);
+                }else {
+                    Methods.myAlert("Wrong User Name or Password");
+                }
+            } else if (selectRoleUserLoginComboBox.getValue().equals("Registrar")) {
+                if (User.registrar.getUserName().equals(loginPageUserNameTF.getText()) && User.registrar.getPassword().equals(loginPagePasswordPF.getText())){
+                    loginMethod("rafid_fxml/registrar-dashboard-view.fxml", actionEvent);
+                }else {
+                    Methods.myAlert("Wrong User Name or Password");
+                }
+            } else if (selectRoleUserLoginComboBox.getValue().equals("Accountant")) {
+                loginMethod("sayed/dashboard-view.fxml", actionEvent);
+            } else if (selectRoleUserLoginComboBox.getValue().equals("Witness")){
+                loginMethod("Bushra FXML/WitnessDashboard.fxml", actionEvent);
+            }else if (selectRoleUserLoginComboBox.getValue().equals("System Admin")){
+                loginMethod("sayed/system-admin-dashboard.fxml",actionEvent);
+            }
+        } catch (Exception e){
+            System.out.println(e.getMessage());
         }
     }
 
