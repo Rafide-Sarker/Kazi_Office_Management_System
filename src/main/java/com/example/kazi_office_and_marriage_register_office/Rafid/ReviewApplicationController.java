@@ -4,6 +4,7 @@ import com.example.kazi_office_and_marriage_register_office.HelloApplication;
 import com.example.kazi_office_and_marriage_register_office.MarriageApplication;
 import com.example.kazi_office_and_marriage_register_office.Methods;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -56,12 +57,18 @@ public class ReviewApplicationController {
     private TextField raWitness1TF;
     @javafx.fxml.FXML
     private TextField raBrideNameTF;
+
+    private static MarriageApplication selectedApplication;
+    @javafx.fxml.FXML
+    private DatePicker raApplicationDateDatePicker;
     @javafx.fxml.FXML
     private Button approveMarriageButton;
     @javafx.fxml.FXML
     private Button generateCertificateButton;
 
-    private MarriageApplication selectedApplication;
+    public static MarriageApplication getSelectedApplication() {
+        return selectedApplication;
+    }
 
     public void initialize(){
         raSearchStatusComboBox.getItems().addAll("Pending", "Approved", "Rejected");
@@ -231,11 +238,12 @@ public class ReviewApplicationController {
         raUploadedDocumentListView.getItems().clear();
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void verifyCheckBoxOnAction(ActionEvent actionEvent) {
         boolean enable = (verifyBrideCheckBox.isSelected() && verifyGroomCheckBox.isSelected());
 
         approveMarriageButton.setDisable(!enable);
         generateCertificateButton.setDisable(!enable);
     }
+
 }

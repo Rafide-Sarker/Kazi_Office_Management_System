@@ -1,4 +1,5 @@
 package com.example.kazi_office_and_marriage_register_office;
+import com.example.kazi_office_and_marriage_register_office.Rafid.MarriageCertificate;
 
 import javafx.scene.control.Alert;
 
@@ -52,5 +53,59 @@ public class Methods {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
+    }
+
+    public static void writeCertificateBinaryFile(String pathName, MarriageCertificate certificate) {
+
+        try {
+            File f = new File(pathName);
+
+            FileOutputStream fos;
+            ObjectOutputStream oos;
+
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new appendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+
+            oos.writeObject(certificate);   // write ONE certificate
+            oos.close();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static ArrayList<MarriageCertificate> readCertificateBinaryFile(String pathName) {
+
+        ArrayList<MarriageCertificate> certificateList = new ArrayList<>();
+
+        try {
+            File f = new File(pathName);
+
+            if (!f.exists()) {
+                return certificateList;
+            }
+
+            FileInputStream fis = new FileInputStream(f);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true) {
+                MarriageCertificate certificate =
+                        (MarriageCertificate) ois.readObject();
+
+                certificateList.add(certificate);
+            }
+
+        } catch (EOFException e) {
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return certificateList;
     }
 }
