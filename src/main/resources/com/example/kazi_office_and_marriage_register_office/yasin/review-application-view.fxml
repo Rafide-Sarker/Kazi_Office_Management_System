@@ -5,27 +5,52 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFF8F3;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kazi_office_and_marriage_register_office.yasin.ReviewApplicationController">
+<AnchorPane prefHeight="770.0" prefWidth="600.0" style="-fx-background-color: #FFF8F3;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kazi_office_and_marriage_register_office.yasin.ReviewApplicationController">
    <children>
-      <Label layoutX="213.0" layoutY="46.0" prefHeight="26.0" prefWidth="222.0" text="Please Check Your Application" textFill="#ab1340">
+      <Label layoutX="38.0" layoutY="73.0" prefHeight="18.0" prefWidth="125.0" text="Full Name                  : " />
+      <Label layoutX="38.0" layoutY="113.0" prefHeight="18.0" prefWidth="126.0" text="Father Name             :" />
+      <Label layoutX="37.0" layoutY="152.0" prefHeight="18.0" prefWidth="126.0" text="Mother Name           :" />
+      <Label layoutX="37.0" layoutY="200.0" prefHeight="18.0" prefWidth="126.0" text="NID                            :" />
+      <Label layoutX="37.0" layoutY="238.0" prefHeight="18.0" prefWidth="135.0" text="Phone No.                  :" />
+      <Label layoutX="38.0" layoutY="287.0" prefHeight="18.0" prefWidth="126.0" text="Email                          :" />
+      <Label fx:id="fullNameBrideLabelField" layoutX="165.0" layoutY="73.0" prefHeight="18.0" prefWidth="357.0" />
+      <Label fx:id="fatherNameBrideLabelField" layoutX="165.0" layoutY="113.0" prefHeight="18.0" prefWidth="358.0" />
+      <Label fx:id="motherNameBrideLabelField" layoutX="164.0" layoutY="152.0" prefHeight="18.0" prefWidth="358.0" />
+      <Label fx:id="nidBrideLabelField" layoutX="164.0" layoutY="200.0" prefHeight="18.0" prefWidth="358.0" />
+      <Label fx:id="phoneNoBrideLabelField" layoutX="168.0" layoutY="238.0" prefHeight="18.0" prefWidth="358.0" />
+      <Label fx:id="emailBrideLabelField" layoutX="164.0" layoutY="287.0" prefHeight="18.0" prefWidth="358.0" />
+      <Button layoutX="162.0" layoutY="740.0" mnemonicParsing="false" onAction="#saveAndSubmitButtonOnAction" prefHeight="26.0" prefWidth="135.0" text="Save &amp; Submit" />
+      <Button layoutX="360.0" layoutY="740.0" mnemonicParsing="false" onAction="#backAndGoToPersonalInformationButtonOnAction" prefHeight="26.0" prefWidth="126.0" text="Back" />
+      <Label layoutX="16.0" layoutY="29.0" prefHeight="18.0" prefWidth="214.0" text="Bride Information Check :" textFill="#df0c0c">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="48.0" layoutY="96.0" prefHeight="18.0" prefWidth="125.0" text="Full Name                  : " />
-      <Label layoutX="48.0" layoutY="127.0" prefHeight="18.0" prefWidth="126.0" text="Father Name             :" />
-      <Label layoutX="48.0" layoutY="161.0" prefHeight="18.0" prefWidth="126.0" text="Mother Name           :" />
-      <Label layoutX="48.0" layoutY="200.0" prefHeight="18.0" prefWidth="126.0" text="NID                            :" />
-      <Label layoutX="44.0" layoutY="235.0" prefHeight="18.0" prefWidth="135.0" text="Phone No.                  :" />
-      <Label layoutX="44.0" layoutY="280.0" prefHeight="18.0" prefWidth="126.0" text="Email                          :" />
-      <Label fx:id="fullNameLabelField" layoutX="175.0" layoutY="96.0" prefHeight="18.0" prefWidth="357.0" />
-      <Label fx:id="fatherNameLabelField" layoutX="175.0" layoutY="127.0" prefHeight="18.0" prefWidth="358.0" />
-      <Label fx:id="motherNameLabelField" layoutX="175.0" layoutY="161.0" prefHeight="18.0" prefWidth="358.0" />
-      <Label fx:id="nidLabelField" layoutX="175.0" layoutY="200.0" prefHeight="18.0" prefWidth="358.0" />
-      <Label fx:id="phoneNoLabelField" layoutX="175.0" layoutY="235.0" prefHeight="18.0" prefWidth="358.0" />
-      <Label fx:id="emailLabelField" layoutX="175.0" layoutY="280.0" prefHeight="18.0" prefWidth="358.0" />
-      <Button layoutX="136.0" layoutY="329.0" mnemonicParsing="false" onAction="#saveAndSubmitButtonOnAction" prefHeight="26.0" prefWidth="135.0" text="Save &amp; Submit" />
-      <Button layoutX="362.0" layoutY="329.0" mnemonicParsing="false" onAction="#backAndGoToPersonalInformationButtonOnAction" prefHeight="26.0" prefWidth="126.0" text="Back" />
+      <Label layoutX="16.0" layoutY="333.0" prefHeight="18.0" prefWidth="214.0" text="Groom Information Check :" textFill="#df0c0c">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="384.0" prefHeight="18.0" prefWidth="118.0" text="Full Name                 : " />
+      <Label fx:id="fullNameGroomLabelField" layoutX="164.0" layoutY="384.0" prefHeight="18.0" prefWidth="357.0" />
+      <Label layoutX="37.0" layoutY="419.0" prefHeight="18.0" prefWidth="126.0" text="Father Name             :" />
+      <Label fx:id="fatherNameGroomLabelField" layoutX="170.0" layoutY="419.0" prefHeight="18.0" prefWidth="358.0" />
+      <Label layoutX="38.0" layoutY="457.0" prefHeight="18.0" prefWidth="126.0" text="Mother Name           :" />
+      <Label fx:id="motherNameGroomLabelField" layoutX="172.0" layoutY="457.0" prefHeight="18.0" prefWidth="358.0" />
+      <Label layoutX="37.0" layoutY="501.0" prefHeight="18.0" prefWidth="126.0" text="NID                            :" />
+      <Label fx:id="nidGroomLabelField" layoutX="163.0" layoutY="501.0" prefHeight="18.0" prefWidth="358.0" />
+      <Label layoutX="38.0" layoutY="539.0" prefHeight="18.0" prefWidth="118.0" text="Phone No.                :" />
+      <Label fx:id="phoneNoGroomLabelField" layoutX="164.0" layoutY="539.0" prefHeight="18.0" prefWidth="358.0" />
+      <Label layoutX="37.0" layoutY="578.0" prefHeight="18.0" prefWidth="118.0" text="Email                        :" />
+      <Label fx:id="emailGroomLabelField" layoutX="151.0" layoutY="578.0" prefHeight="18.0" prefWidth="358.0" />
+      <Label layoutX="16.0" layoutY="625.0" prefHeight="18.0" prefWidth="214.0" text="Witness  :" textFill="#cf0e0e">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="669.0" prefHeight="18.0" prefWidth="77.0" text="Witness_1 :" />
+      <Label fx:id="witness1Label" layoutX="102.0" layoutY="669.0" prefHeight="18.0" prefWidth="190.0" />
+      <Label layoutX="32.0" layoutY="705.0" prefHeight="18.0" prefWidth="77.0" text="Witness_2 :" />
+      <Label fx:id="witness2Label" layoutX="102.0" layoutY="705.0" prefHeight="18.0" prefWidth="190.0" />
    </children>
 </AnchorPane>
