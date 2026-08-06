@@ -6,24 +6,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="492.0" prefWidth="474.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kazi_office_and_marriage_register_office.yasin.UploadDocumentsController">
+<AnchorPane prefHeight="653.0" prefWidth="436.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kazi_office_and_marriage_register_office.yasin.UploadDocumentsController">
    <children>
-      <Label layoutX="111.0" layoutY="43.0" prefHeight="32.0" prefWidth="258.0" text="Please Upload Required Documents" textFill="#a61919">
+      <Label layoutX="99.0" layoutY="28.0" prefHeight="32.0" prefWidth="258.0" text="Please Upload Required Documents" textFill="#a61919">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="88.0" layoutY="96.0" prefHeight="18.0" prefWidth="77.0" text="Bride Photo  :" textFill="#241ced" />
-      <Button layoutX="253.0" layoutY="130.0" mnemonicParsing="false" onAction="#chooseBridePhotoButtonOnAction" prefHeight="26.0" prefWidth="95.0" text="Choose" />
-      <Label layoutX="88.0" layoutY="191.0" prefHeight="18.0" prefWidth="95.0" text="DOB Certificate  :" textFill="#2f1499" />
-      <Button layoutX="253.0" layoutY="231.0" mnemonicParsing="false" onAction="#chooseDobCertificateButtonOnAction" prefHeight="26.0" prefWidth="95.0" text="Choose" />
-      <Label layoutX="88.0" layoutY="291.0" prefHeight="18.0" prefWidth="77.0" text=" NID Copy  :" textFill="#260eb0" />
-      <Button layoutX="253.0" layoutY="328.0" mnemonicParsing="false" onAction="#chooseNidCopyButtonOnAction" prefHeight="26.0" prefWidth="95.0" text="Choose" />
-      <TextField fx:id="bridePhotoTextField" editable="false" layoutX="88.0" layoutY="131.0" promptText="No file selected" />
-      <TextField fx:id="dobCertificateTextField" editable="false" layoutX="91.0" layoutY="231.0" promptText="No file selected" />
-      <TextField fx:id="nidCopyTextField" editable="false" layoutX="88.0" layoutY="328.0" promptText="No file selected" />
-      <Button layoutX="105.0" layoutY="411.0" mnemonicParsing="false" onAction="#uploadAndGoToDashBoardOnAction" prefHeight="32.0" prefWidth="110.0" text="Upload" />
-      <Button layoutX="277.0" layoutY="411.0" mnemonicParsing="false" onAction="#backAndGoToDashBoardButtonOnAction" prefHeight="32.0" prefWidth="110.0" text="Back" />
+      <Label layoutX="76.0" layoutY="168.0" prefHeight="18.0" prefWidth="77.0" text="Bride Photo  :" textFill="#241ced" />
+      <Button layoutX="240.0" layoutY="202.0" mnemonicParsing="false" onAction="#chooseBridePhotoButtonOnAction" prefHeight="26.0" prefWidth="95.0" text="Choose" />
+      <Label layoutX="76.0" layoutY="253.0" prefHeight="18.0" prefWidth="126.0" text="Bride DOB Certificate  :" textFill="#2f1499" />
+      <Button layoutX="240.0" layoutY="365.0" mnemonicParsing="false" onAction="#chooseGroomDobCertificateButtonOnAction" prefHeight="26.0" prefWidth="95.0" text="Choose" />
+      <Label layoutX="76.0" layoutY="419.0" prefHeight="18.0" prefWidth="95.0" text="Bride NID Copy  :" textFill="#260eb0" />
+      <TextField fx:id="bridePhotoTextField" editable="false" layoutX="76.0" layoutY="203.0" promptText="No file selected" />
+      <TextField fx:id="groomDobCertificateTextField" editable="false" layoutX="76.0" layoutY="366.0" promptText="No file selected" />
+      <Button layoutX="51.0" layoutY="607.0" mnemonicParsing="false" onAction="#uploadAndGoToDashBoardOnAction" prefHeight="32.0" prefWidth="110.0" text="Upload" />
+      <Button layoutX="246.0" layoutY="607.0" mnemonicParsing="false" onAction="#backAndGoToDashBoardButtonOnAction" prefHeight="32.0" prefWidth="110.0" text="Back" />
+      <TextField fx:id="GroomnNidCopyTextField" editable="false" layoutX="76.0" layoutY="543.0" promptText="No file selected" />
+      <Button layoutX="240.0" layoutY="542.0" mnemonicParsing="false" onAction="#chooseGroomNidCopyButtonOnAction" prefHeight="26.0" prefWidth="95.0" text="Choose" />
+      <TextField fx:id="brideNidCopyTextField" editable="false" layoutX="76.0" layoutY="456.0" promptText="No file selected" />
+      <Button layoutX="240.0" layoutY="455.0" mnemonicParsing="false" onAction="#chooseBrideNidCopyButtonOnAction" prefHeight="26.0" prefWidth="95.0" text="Choose" />
+      <Label layoutX="76.0" layoutY="499.0" prefHeight="18.0" prefWidth="102.0" text="Groom NID Copy  :" textFill="#260eb0" />
+      <Label layoutX="76.0" layoutY="327.0" prefHeight="18.0" prefWidth="141.0" text="Groom DOB Certificate  :" textFill="#2f1499" />
+      <TextField fx:id="brideDobCertificateTextField" editable="false" layoutX="76.0" layoutY="288.0" promptText="No file selected" />
+      <Button layoutX="240.0" layoutY="287.0" mnemonicParsing="false" onAction="#chooseBrideDobCertificateButtonOnAction" prefHeight="26.0" prefWidth="95.0" text="Choose" />
+      <Button layoutX="240.0" layoutY="124.0" mnemonicParsing="false" onAction="#chooseGroomPhotoButtonOnAction" prefHeight="26.0" prefWidth="95.0" text="Choose" />
+      <TextField fx:id="GroomPhotoTextField" editable="false" layoutX="79.0" layoutY="124.0" promptText="No file selected" />
+      <Label layoutX="76.0" layoutY="75.0" prefHeight="18.0" prefWidth="95.0" text="Groom Photo  :" textFill="#241ced" />
    </children>
 </AnchorPane>

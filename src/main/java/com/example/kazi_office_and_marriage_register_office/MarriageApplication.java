@@ -244,9 +244,9 @@ public class MarriageApplication implements Serializable {
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(object);
             oos.close();
+
         }catch (Exception e){
-            e.printStackTrace();
-            //System.out.println(e.getMessage());
+            //
         }
     }
     public static MarriageApplication readApplication(String pathName) {
