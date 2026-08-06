@@ -50,7 +50,6 @@ public class RegisterMarriageController {
     public void initialize(){
         ArrayList<MarriageCertificate> certificateList = Methods.readCertificateBinaryFile("MarriageCertificateList.bin");
 
-        System.out.println("Certificates loaded: " + certificateList.size());
         rmMarriageIdTC.setCellValueFactory(new PropertyValueFactory<>("marriageId"));
         rmDateTC.setCellValueFactory(new PropertyValueFactory<>("marriageDate"));
         rmBrideTC.setCellValueFactory(new PropertyValueFactory<>("brideName"));
@@ -82,8 +81,7 @@ public class RegisterMarriageController {
             return;
         }
 
-        ArrayList<MarriageCertificate> registeredList =
-                Methods.readCertificateBinaryFile("RegisteredMarriage.bin");
+        ArrayList<MarriageCertificate> registeredList = Methods.readCertificateBinaryFile("RegisteredMarriage.bin");
 
         for (MarriageCertificate c : registeredList) {
             if (c.getMarriageId().equals(certificate.getMarriageId())) {
@@ -91,11 +89,8 @@ public class RegisterMarriageController {
                 return;
             }
         }
-
-        Methods.writeCertificateBinaryFile(
-                "RegisteredMarriage.bin",
-                certificate
-        );
+        certificate.setStatus("Registered");
+        Methods.writeCertificateBinaryFile("RegisteredMarriage.bin", certificate);
 
         Methods.Alert("Marriage registered successfully.");
     }
@@ -112,8 +107,7 @@ public class RegisterMarriageController {
 
     @javafx.fxml.FXML
     public void searchApprovedMarriageFilterOnAction(ActionEvent actionEvent) {
-        ArrayList<MarriageCertificate> certificateList =
-                Methods.readCertificateBinaryFile("MarriageCertificateList.bin");
+        ArrayList<MarriageCertificate> certificateList = Methods.readCertificateBinaryFile("MarriageCertificateList.bin");
 
         rmApprovedMarriageTV.getItems().clear();
 

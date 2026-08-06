@@ -29,6 +29,8 @@ public class MarriageCertificate implements Serializable {
 
     private LocalDate marriageDate;
     private String registeredBy;
+    private String status;
+
 
     public MarriageCertificate(
             String certificateNo,
@@ -57,11 +59,21 @@ public class MarriageCertificate implements Serializable {
         this.witness1 = app.getWitness1();
         this.witness2 = app.getWitness2();
 
+        this.status = app.getStatus();
+
         this.marriageDate = marriageDate;
         this.registeredBy = registeredBy;
     }
 
     public MarriageCertificate() {
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getMarriageId() {
@@ -201,6 +213,7 @@ public class MarriageCertificate implements Serializable {
                 ", witness2='" + witness2 + '\'' +
                 ", marriageDate=" + marriageDate +
                 ", registeredBy='" + registeredBy + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }
