@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -38,15 +39,30 @@
       <Pane prefHeight="200.0" prefWidth="270.0" style="-fx-background-color: #0E2227;" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="18.0" layoutY="11.0" text="Marriage ID" textFill="#f2ecec" />
-            <TextField fx:id="rmsSearchMarriageIdTF" layoutX="14.0" layoutY="37.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="rmsSearchMarriageIdTF" layoutX="14.0" layoutY="37.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
             <Label layoutX="16.0" layoutY="75.0" text="Bride Name" textFill="#f2ecec" />
-            <TextField fx:id="rmsSearchBrideTF" layoutX="12.0" layoutY="101.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="rmsSearchBrideTF" layoutX="12.0" layoutY="101.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
             <Label layoutX="18.0" layoutY="136.0" text="Groom Name" textFill="#f2ecec" />
-            <TextField fx:id="rmsSearchGroomTF" layoutX="14.0" layoutY="162.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="rmsSearchGroomTF" layoutX="14.0" layoutY="162.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
             <Label layoutX="17.0" layoutY="194.0" text="Date" textFill="#f2ecec" />
             <Label layoutX="19.0" layoutY="257.0" text="Status" textFill="#f2ecec" />
-            <Button layoutX="17.0" layoutY="342.0" mnemonicParsing="false" onAction="#searchMarriageRecordFilterOnAction" prefWidth="110.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Search" />
-            <Button layoutX="137.0" layoutY="342.0" mnemonicParsing="false" onAction="#clearMarriageRecordFilterOnAction" prefWidth="110.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Clear" />
+            <Button layoutX="17.0" layoutY="342.0" mnemonicParsing="false" onAction="#searchMarriageRecordFilterOnAction" prefWidth="110.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Search">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="137.0" layoutY="342.0" mnemonicParsing="false" onAction="#clearMarriageRecordFilterOnAction" prefWidth="110.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Clear">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
             <ComboBox fx:id="rmsSearchStatusComboBox" editable="true" layoutX="16.0" layoutY="285.0" prefHeight="25.0" prefWidth="244.0" promptText="Status" style="-fx-background-color: gray;" />
             <DatePicker fx:id="rmsSearchDateDatePicker" editable="true" layoutX="18.0" layoutY="218.0" prefHeight="25.0" prefWidth="240.0" style="-fx-background-color: gray;" />
          </children>
@@ -72,17 +88,35 @@
             </TableView>
             <Label layoutX="243.0" layoutY="227.0" text="Selected Marriage Record" textFill="#f2ecec" />
             <Label layoutX="95.0" layoutY="270.0" text="Marriage ID" textFill="#f2ecec" />
-            <TextField fx:id="selectedMarriageRecordTF" editable="false" layoutX="184.0" layoutY="266.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="selectedMarriageRecordTF" editable="false" layoutX="184.0" layoutY="266.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></TextField>
             <Label layoutX="95.0" layoutY="308.0" text="Bride Name" textFill="#f2ecec" />
-            <TextField fx:id="selectedBrideNameTF" editable="false" layoutX="184.0" layoutY="304.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="selectedBrideNameTF" editable="false" layoutX="184.0" layoutY="304.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></TextField>
             <Label layoutX="95.0" layoutY="345.0" text="Groom Name" textFill="#f2ecec" />
-            <TextField fx:id="selectedGroomNameTF" editable="false" layoutX="184.0" layoutY="341.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="selectedGroomNameTF" editable="false" layoutX="184.0" layoutY="341.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></TextField>
             <Label layoutX="95.0" layoutY="380.0" text="Marriage Date" textFill="#f2ecec" />
-            <TextField fx:id="selectedMarriageDateTF" editable="false" layoutX="184.0" layoutY="376.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="selectedMarriageDateTF" editable="false" layoutX="184.0" layoutY="376.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></TextField>
             <Label layoutX="95.0" layoutY="417.0" text="Certificate No." textFill="#f2ecec" />
-            <TextField fx:id="selectedCertificateNoTF" editable="false" layoutX="184.0" layoutY="413.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="selectedCertificateNoTF" editable="false" layoutX="184.0" layoutY="413.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></TextField>
             <Label layoutX="95.0" layoutY="453.0" text="Status" textFill="#f2ecec" />
-            <TextField fx:id="selectedStatusTF" editable="false" layoutX="184.0" layoutY="449.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="selectedStatusTF" editable="false" layoutX="184.0" layoutY="449.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></TextField>
          </children>
       </AnchorPane>
    </center>

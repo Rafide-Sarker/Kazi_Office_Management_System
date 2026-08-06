@@ -39,7 +39,7 @@ public class CreateNewAccountController {
             myAlert("All field must be Filled");
         } else if (!createAccountPasswordPF.getText().equals(createAccountConfirmPasswordPF.getText())) {
             myAlert("Password and Confirm Password must be same");
-        } else if (!email.contains("@") || !email.contains(".") || email.indexOf("@") > email.lastIndexOf(".")) {
+        } else if (!email.contains("@") && !email.contains(".") || email.indexOf("@") > email.lastIndexOf(".")) {
             myAlert("Enter Valid Email");
         } else if (!createAccountPhoneNumberTF.getText().matches("\\d+")) {
             myAlert("Phone Number must be only Digits");

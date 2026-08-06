@@ -1,5 +1,7 @@
 package com.example.kazi_office_and_marriage_register_office;
 
+import com.example.kazi_office_and_marriage_register_office.Rafid.Kazi;
+import com.example.kazi_office_and_marriage_register_office.Rafid.Registrar;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -55,13 +57,13 @@ public class loginPageController {
                 }
             }
             else if (selectRoleUserLoginComboBox.getValue().equals("Kazi")) {
-                if (User.kazi.getUserName().equals(loginPageUserNameTF.getText()) && User.kazi.getPassword().equals(loginPagePasswordPF.getText())){
+                if (Kazi.kazi.getUserName().equals(loginPageUserNameTF.getText()) && User.kazi.getPassword().equals(loginPagePasswordPF.getText())){
                     loginMethod("rafid_fxml/kazi-dashboard-view.fxml", actionEvent);
                 }else {
                     Methods.myAlert("Wrong User Name or Password");
                 }
             } else if (selectRoleUserLoginComboBox.getValue().equals("Registrar")) {
-                if (User.registrar.getUserName().equals(loginPageUserNameTF.getText()) && User.registrar.getPassword().equals(loginPagePasswordPF.getText())){
+                if (Registrar.registrar.getUserName().equals(loginPageUserNameTF.getText()) && User.registrar.getPassword().equals(loginPagePasswordPF.getText())){
                     loginMethod("rafid_fxml/registrar-dashboard-view.fxml", actionEvent);
                 }else {
                     Methods.myAlert("Wrong User Name or Password");

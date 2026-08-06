@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,26 +15,41 @@
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button layoutX="135.0" layoutY="125.0" mnemonicParsing="false" onAction="#registryManagementOnAction" prefHeight="50.0" prefWidth="280.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text=" Registry Management">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button layoutX="135.0" layoutY="200.0" mnemonicParsing="false" onAction="#certificateManagementOnAction" prefHeight="50.0" prefWidth="280.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Certificate Management  ">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button layoutX="179.0" layoutY="348.0" mnemonicParsing="false" onAction="#logoutOnAction" prefHeight="50.0" prefWidth="195.0" style="-fx-background-color: #1E3F46; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Logout">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button layoutX="136.0" layoutY="272.0" mnemonicParsing="false" onAction="#generateReportsOnAction" prefHeight="50.0" prefWidth="280.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Generate Reports  ">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
          </children>
       </Pane>

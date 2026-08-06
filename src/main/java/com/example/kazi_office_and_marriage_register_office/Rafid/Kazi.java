@@ -21,6 +21,8 @@ public class Kazi extends User {
     public Kazi() {
     }
 
+    public static Kazi kazi = new Kazi("Kazi","Kazi", "kazi@gmail.com", "Dhaka", "Kazi", "12345678", 01616161616, "kazi101", "Lis101", "Office", "Kazi", "Active");
+
     public String getKaziId() {
         return kaziId;
     }

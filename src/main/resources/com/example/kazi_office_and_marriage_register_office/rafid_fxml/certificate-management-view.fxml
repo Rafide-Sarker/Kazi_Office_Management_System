@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Hyperlink?>
@@ -37,29 +38,53 @@
       <Pane prefHeight="200.0" prefWidth="270.0" style="-fx-background-color: #0E2227;" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="18.0" layoutY="11.0" text="Certificate No." textFill="#f2ecec" />
-            <TextField fx:id="cmCertificateNoTextField" editable="false" layoutX="14.0" layoutY="37.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="cmCertificateNoTextField" editable="false" layoutX="14.0" layoutY="37.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></TextField>
             <Label layoutX="16.0" layoutY="75.0" text="Marriage ID" textFill="#f2ecec" />
-            <TextField fx:id="cmMarriageIdTextField" editable="false" layoutX="12.0" layoutY="101.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="cmMarriageIdTextField" editable="false" layoutX="12.0" layoutY="101.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></TextField>
             <Label layoutX="18.0" layoutY="136.0" text="Registration No." textFill="#f2ecec" />
-            <TextField fx:id="cmRegistrationNoTextField" editable="false" layoutX="14.0" layoutY="162.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="cmRegistrationNoTextField" editable="false" layoutX="14.0" layoutY="162.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></TextField>
             <Label layoutX="18.0" layoutY="196.0" text="Bride Name" textFill="#f2ecec" />
-            <TextField fx:id="cmBrideNameTextField" editable="false" layoutX="14.0" layoutY="222.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="cmBrideNameTextField" editable="false" layoutX="14.0" layoutY="222.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></TextField>
             <Label layoutX="15.0" layoutY="262.0" text="Groom Name" textFill="#f2ecec" />
-            <TextField fx:id="cmGroomNameTextField" editable="false" layoutX="14.0" layoutY="286.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="cmGroomNameTextField" editable="false" layoutX="14.0" layoutY="286.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></TextField>
             <Label layoutX="17.0" layoutY="323.0" text="Issue Date" textFill="#f2ecec" />
             <Button layoutX="33.0" layoutY="458.0" mnemonicParsing="false" onAction="#verifyCertificateOnAction" prefHeight="23.0" prefWidth="195.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Verify Cirtificate">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Label layoutX="18.0" layoutY="380.0" text="Status" textFill="#f2ecec" />
             <Button layoutX="33.0" layoutY="494.0" mnemonicParsing="false" onAction="#issueDuplicateOnAction" prefHeight="23.0" prefWidth="195.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Issue Duplicate">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <DatePicker fx:id="cmIssueDateDatePicker" layoutX="16.0" layoutY="347.0" prefHeight="25.0" prefWidth="244.0" />
-            <TextField fx:id="cmStatusTextField" editable="false" layoutX="15.0" layoutY="397.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="cmStatusTextField" editable="false" layoutX="15.0" layoutY="397.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></TextField>
          </children>
       </Pane>
    </left>
@@ -80,8 +105,14 @@
                </columns>
             </TableView>
             <Label layoutX="18.0" layoutY="388.0" text="Search  Certificate No." textFill="#f2ecec" />
-            <TextField fx:id="cmSearchCertificateNoTextField" layoutX="149.0" layoutY="383.0" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: gray;" />
-            <Button layoutX="366.0" layoutY="384.0" mnemonicParsing="false" onAction="#searchRegisteredMarriageOnAction" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Search" />
+            <TextField fx:id="cmSearchCertificateNoTextField" layoutX="149.0" layoutY="383.0" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+            <Button layoutX="366.0" layoutY="384.0" mnemonicParsing="false" onAction="#searchRegisteredMarriageOnAction" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Search">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </AnchorPane>
    </center>

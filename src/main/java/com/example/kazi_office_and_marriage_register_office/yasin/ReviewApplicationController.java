@@ -80,7 +80,7 @@ public class ReviewApplicationController
             File f = new File("SavedApplications.bin");
             FileOutputStream fos = null;
             ObjectOutputStream oos = null;
-            if(f.exists()){
+            if(f.exists() && f.length()>0){
                 fos = new FileOutputStream(f,true);
                 oos = new appendableObjectOutputStream(fos);
             }

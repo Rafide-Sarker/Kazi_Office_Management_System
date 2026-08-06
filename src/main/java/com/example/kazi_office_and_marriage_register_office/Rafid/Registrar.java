@@ -14,6 +14,8 @@ public class Registrar extends User {
         this.designation = designation;
         this.status = status;
     }
+    public static Registrar registrar = new Registrar("Registrar","Registrar", "registrar@gmail.com", "Dhaka", "Registrar", "12345678", 01616161616, 001, "reg101", "Office", "Registrar", "Active");
+
 
     public Registrar(String userID, String userName, String email, String address, String role, String password, int phoneNumber) {
         super(userID, userName, email, address, role, password, phoneNumber);
