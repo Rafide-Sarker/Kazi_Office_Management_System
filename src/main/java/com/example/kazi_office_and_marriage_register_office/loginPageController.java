@@ -74,7 +74,14 @@ public class loginPageController {
                 }
 
             } else if (selectRoleUserLoginComboBox.getValue().equals("Witness")){
-                loginMethod("Bushra FXML/WitnessDashboard.fxml", actionEvent);
+                User user = login(loginPageUserNameTF.getText(),loginPagePasswordPF.getText(),selectRoleUserLoginComboBox.getValue());
+                if (user == null){
+                    Methods.myAlert("Invalid user name, password or role");
+                }
+                else {
+                    loginMethod("Bushra FXML/WitnessDashboard.fxml", actionEvent);
+                }
+
             }else if (selectRoleUserLoginComboBox.getValue().equals("System Admin")){
                 if (User.systemAdmin.getUserName().equals(loginPageUserNameTF.getText()) && User.systemAdmin.getPassword().equals(loginPagePasswordPF.getText())){
                     loginMethod("sayed/dashboard-view.fxml", actionEvent);
