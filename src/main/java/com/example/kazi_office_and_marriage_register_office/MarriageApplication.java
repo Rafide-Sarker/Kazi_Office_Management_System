@@ -1,16 +1,19 @@
 package com.example.kazi_office_and_marriage_register_office;
 
+import java.io.*;
 import java.time.LocalDate;
+import java.util.Random;
 
-public class MarriageApplication {
+public class MarriageApplication implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String applicationID, status;
     private LocalDate applicationDate;
     private Documents documents;// composition
-    private String fullNameBride,fullNameGroom,fatherNameGroom,fatherNameBride,motherNameGroom,motherNameBride,addressGroom,addressBride,emailGroom,emailBride;
-    private Integer nidGroom,nidBride , phoneNumber;
+    private String fullNameBride,fullNameGroom,fatherNameGroom,fatherNameBride,motherNameGroom,motherNameBride,addressGroom,addressBride,emailGroom,emailBride,witness1,witness2;
+    private Integer nidGroom,nidBride , phoneNumberBride , phoneNumberGroom;
     private LocalDate dobGroom,dobBride;
 
-    public MarriageApplication(String applicationID, String status, LocalDate applicationDate, Documents documents, String fullNameBride, String fullNameGroom, String fatherNameGroom, String fatherNameBride, String motherNameGroom, String motherNameBride, String addressGroom, String addressBride, String emailGroom, String emailBride, Integer nidGroom, Integer nidBride, Integer phoneNumber, LocalDate dobGroom, LocalDate dobBride) {
+    public MarriageApplication(String applicationID, String status, LocalDate applicationDate, Documents documents, String fullNameBride, String fullNameGroom, String fatherNameGroom, String fatherNameBride, String motherNameGroom, String motherNameBride, String addressGroom, String addressBride, String emailGroom, String emailBride, Integer nidGroom, Integer nidBride, Integer phoneNumberBride, Integer phoneNumberGroom, LocalDate dobGroom, LocalDate dobBride, String witness1,String witness2) {
         this.applicationID = applicationID;
         this.status = status;
         this.applicationDate = applicationDate;
@@ -27,9 +30,12 @@ public class MarriageApplication {
         this.emailBride = emailBride;
         this.nidGroom = nidGroom;
         this.nidBride = nidBride;
-        this.phoneNumber = phoneNumber;
+        this.phoneNumberBride = phoneNumberBride;
+        this.phoneNumberGroom = phoneNumberGroom;
         this.dobGroom = dobGroom;
         this.dobBride = dobBride;
+        this.witness1 = witness1;
+        this.witness2 = witness2;
     }
 
     public String getFullNameBride() {
@@ -128,12 +134,20 @@ public class MarriageApplication {
         this.nidBride = nidBride;
     }
 
-    public Integer getPhoneNumber() {
-        return phoneNumber;
+    public Integer getPhoneNumberBride() {
+        return phoneNumberBride;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNumberBride(Integer phoneNumberBride) {
+        this.phoneNumberBride = phoneNumberBride;
+    }
+
+    public Integer getPhoneNumberGroom() {
+        return phoneNumberGroom;
+    }
+
+    public void setPhoneNumberGroom(Integer phoneNumberGroom) {
+        this.phoneNumberGroom = phoneNumberGroom;
     }
 
     public LocalDate getDobGroom() {
@@ -150,6 +164,22 @@ public class MarriageApplication {
 
     public void setDobBride(LocalDate dobBride) {
         this.dobBride = dobBride;
+    }
+
+    public String getWitness1() {
+        return witness1;
+    }
+
+    public void setWitness1(String witness1) {
+        this.witness1 = witness1;
+    }
+
+    public String getWitness2() {
+        return witness2;
+    }
+
+    public void setWitness2(String witness2) {
+        this.witness2 = witness2;
     }
 
     @Override
@@ -169,9 +199,12 @@ public class MarriageApplication {
                 ", addressBride='" + addressBride + '\'' +
                 ", emailGroom='" + emailGroom + '\'' +
                 ", emailBride='" + emailBride + '\'' +
+                ", witness1='" + witness1 + '\'' +
+                ", witness2='" + witness2 + '\'' +
                 ", nidGroom=" + nidGroom +
                 ", nidBride=" + nidBride +
-                ", phoneNumber=" + phoneNumber +
+                ", phoneNumberBride=" + phoneNumberBride +
+                ", phoneNumberGroom=" + phoneNumberGroom +
                 ", dobGroom=" + dobGroom +
                 ", dobBride=" + dobBride +
                 '}';
@@ -188,8 +221,59 @@ public class MarriageApplication {
         this.documents = new Documents();
     }
 
+
     public String getApplicationID() {
         return applicationID;
+    }
+
+    public static String generateApplicationID() {
+        Random random = new Random();
+
+        return LocalDate.now().getYear()
+                + String.format("%04d", random.nextInt(10000));
+    }
+
+    public static <T> void writeBinaryFile(String pathName, T object){
+
+        System.out.println(object.getClass());
+        System.out.println(object instanceof java.io.Serializable);
+
+        try {
+            File f = new File(pathName);
+            FileOutputStream fos = new FileOutputStream(f);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(object);
+            oos.close();
+        }catch (Exception e){
+            e.printStackTrace();
+            //System.out.println(e.getMessage());
+        }
+    }
+    public static MarriageApplication readApplication(String pathName) {
+
+        File f = new File(pathName);
+
+        if (!f.exists()) {
+            return null;
+        }
+
+        MarriageApplication application = null;
+
+        try {
+            FileInputStream fis = new FileInputStream(f);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true) {
+                application = (MarriageApplication) ois.readObject();
+            }
+
+        } catch (EOFException e) {
+            return application;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     public void setApplicationID(String applicationID) {

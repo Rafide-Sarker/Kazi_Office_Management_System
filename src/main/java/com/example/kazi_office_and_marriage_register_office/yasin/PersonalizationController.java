@@ -1,6 +1,7 @@
 package com.example.kazi_office_and_marriage_register_office.yasin;
 
 import com.example.kazi_office_and_marriage_register_office.HelloApplication;
+import com.example.kazi_office_and_marriage_register_office.MarriageApplication;
 import com.example.kazi_office_and_marriage_register_office.Methods;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 import static com.example.kazi_office_and_marriage_register_office.Methods.myAlert;
 
@@ -92,6 +94,45 @@ public class PersonalizationController
             myAlert("NID Number Must be Only Digits");
             return;
         }
+
+        MarriageApplication application = new MarriageApplication(
+
+                MarriageApplication.generateApplicationID(),
+                "Pending",
+                LocalDate.now(),
+                null,
+
+                fullNameBrideTextField.getText(),
+                fullNameGroomTextField.getText(),
+
+                fatherNameGroomTextField.getText(),
+                fatherNameBrideTextField.getText(),
+
+                motherNameGroomTextField.getText(),
+                motherNameBrideTextField.getText(),
+
+                addressGroomTextField.getText(),
+                addressBrideTextField.getText(),
+
+                emailGroomTextField.getText(),
+                emailBrideTextField.getText(),
+
+                Integer.parseInt(nidNumberGroomTextField.getText()),
+                Integer.parseInt(nidNumberBrideTextField.getText()),
+
+                Integer.parseInt(phoneNumberBrideTextField.getText()),
+                Integer.parseInt(phoneNumberGroomTextField.getText()),
+
+                dateOfBirthGroomTextField.getValue(),
+                dateOfBirthBrideTextField.getValue(),
+
+                witness1.getText(),
+                witness2.getText()
+        );
+
+        MarriageApplication.writeBinaryFile("MarriageApplication.bin", application);
+
+
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("yasin/confirm-marriage-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());

@@ -1,6 +1,8 @@
 package com.example.kazi_office_and_marriage_register_office.yasin;
 
 import com.example.kazi_office_and_marriage_register_office.HelloApplication;
+import com.example.kazi_office_and_marriage_register_office.MarriageApplication;
+import com.example.kazi_office_and_marriage_register_office.appendableObjectOutputStream;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -9,7 +11,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class ReviewApplicationController
 {
@@ -43,19 +48,57 @@ public class ReviewApplicationController
     @javafx.fxml.FXML
     private Label witness1Label;
 
+    MarriageApplication reviewApplication = MarriageApplication.readApplication("MarriageApplication.bin");
+
     @javafx.fxml.FXML
     public void initialize() {
+
+        if (reviewApplication == null){
+            return;
+        }
+
+        fullNameBrideLabelField.setText(reviewApplication.getFullNameBride());
+        fullNameGroomLabelField.setText(reviewApplication.getFullNameGroom());
+        fatherNameBrideLabelField.setText((reviewApplication.getFatherNameBride()));
+        fatherNameGroomLabelField.setText(reviewApplication.getFatherNameGroom());
+        motherNameBrideLabelField.setText(reviewApplication.getMotherNameBride());
+        motherNameGroomLabelField.setText(reviewApplication.getMotherNameGroom());
+        nidBrideLabelField.setText(String.valueOf(reviewApplication.getNidBride()));
+        nidGroomLabelField.setText(String.valueOf(reviewApplication.getNidGroom()));
+        phoneNoBrideLabelField.setText(String.valueOf(reviewApplication.getPhoneNumberBride()));
+        phoneNoGroomLabelField.setText(String.valueOf(reviewApplication.getPhoneNumberGroom()));
+        emailBrideLabelField.setText(reviewApplication.getEmailBride());
+        emailGroomLabelField.setText(reviewApplication.getEmailGroom());
+        witness1Label.setText(reviewApplication.getWitness1());
+        witness2Label.setText(reviewApplication.getWitness2());
+
     }
 
     @javafx.fxml.FXML
     public void saveAndSubmitButtonOnAction(ActionEvent actionEvent) throws IOException {
-
-        // applicationId = ??
+        try{
+            File f = new File("SavedApplications.bin");
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+            if(f.exists()){
+                fos = new FileOutputStream(f,true);
+                oos = new appendableObjectOutputStream(fos);
+            }
+            else{
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+            oos.writeObject(reviewApplication);
+            oos.close();
+        }
+        catch (Exception e){
+            //
+        }
 
         Alert myAlert = new Alert(Alert.AlertType.INFORMATION);
         myAlert.setTitle("Success");
         myAlert.setHeaderText("Application Submitted Successfully!");
-        myAlert.setContentText("Your Application ID :??");
+        myAlert.setContentText("Your Application ID :"+reviewApplication.getApplicationID());
         myAlert.showAndWait();
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("yasin/DashBoard-view.fxml"));
