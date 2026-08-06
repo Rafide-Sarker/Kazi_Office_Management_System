@@ -1,6 +1,7 @@
 package com.example.kazi_office_and_marriage_register_office.Rafid;
 
 import com.example.kazi_office_and_marriage_register_office.HelloApplication;
+import com.example.kazi_office_and_marriage_register_office.Methods;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -9,11 +10,14 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import javax.imageio.IIOException;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class RegisterMarriageController {
     @javafx.fxml.FXML
@@ -21,36 +25,79 @@ public class RegisterMarriageController {
     @javafx.fxml.FXML
     private TextField rmMarriageIdTF;
     @javafx.fxml.FXML
-    private TableColumn rmMarriageIdTC;
+    private TableColumn<MarriageCertificate, String> rmMarriageIdTC;
     @javafx.fxml.FXML
-    private TableColumn rmCertificateNoTC;
-    @javafx.fxml.FXML
-    private TextField rmApplicantIdTF;
+    private TableColumn<MarriageCertificate, String> rmCertificateNoTC;
     @javafx.fxml.FXML
     private TextField searchApproveMarriageFIlterTF;
     @javafx.fxml.FXML
-    private TextField rmStatusTF;
-    @javafx.fxml.FXML
-    private TableColumn rmStatusTC;
-    @javafx.fxml.FXML
     private TextField rmCertificateNumberTF;
     @javafx.fxml.FXML
-    private TableColumn rmGroomTC;
+    private TableColumn<MarriageCertificate, String> rmGroomTC;
     @javafx.fxml.FXML
     private TextField rmBrideNameTF;
     @javafx.fxml.FXML
-    private TableColumn rmDateTC;
+    private TableColumn<MarriageCertificate, LocalDate> rmDateTC;
     @javafx.fxml.FXML
     private TextField rmGroomNameTF;
     @javafx.fxml.FXML
     private DatePicker rmMarriageDateDatePicker;
     @javafx.fxml.FXML
-    private TableColumn rmBrideTC;
+    private TableColumn<MarriageCertificate, String > rmBrideTC;
     @javafx.fxml.FXML
-    private TableView rmApprovedMarriageTV;
+    private TableView<MarriageCertificate> rmApprovedMarriageTV;
+
+    public void initialize(){
+        ArrayList<MarriageCertificate> certificateList = Methods.readCertificateBinaryFile("MarriageCertificateList.bin");
+
+        System.out.println("Certificates loaded: " + certificateList.size());
+        rmMarriageIdTC.setCellValueFactory(new PropertyValueFactory<>("marriageId"));
+        rmDateTC.setCellValueFactory(new PropertyValueFactory<>("marriageDate"));
+        rmBrideTC.setCellValueFactory(new PropertyValueFactory<>("brideName"));
+        rmGroomTC.setCellValueFactory(new PropertyValueFactory<>("groomName"));
+        rmCertificateNoTC.setCellValueFactory(new PropertyValueFactory<>("certificateNo"));
+
+        rmApprovedMarriageTV.getItems().addAll(certificateList);
+
+        rmApprovedMarriageTV.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, selectedCertificate) ->{
+                    if (selectedCertificate!=null){
+                        rmMarriageIdTF.setText(selectedCertificate.getMarriageId());
+                        rmBrideNameTF.setText(selectedCertificate.getBrideName());
+                        rmGroomNameTF.setText(selectedCertificate.getGroomName());
+                        rmMarriageDateDatePicker.setValue(selectedCertificate.getMarriageDate());
+                        rmCertificateNumberTF.setText(selectedCertificate.getCertificateNo());
+                    }
+                }
+        );
+    }
 
     @javafx.fxml.FXML
     public void registerMarriageOnAction(ActionEvent actionEvent) {
+        MarriageCertificate certificate =
+                rmApprovedMarriageTV.getSelectionModel().getSelectedItem();
+
+        if (certificate == null) {
+            Methods.myAlert("Please select a marriage.");
+            return;
+        }
+
+        ArrayList<MarriageCertificate> registeredList =
+                Methods.readCertificateBinaryFile("RegisteredMarriage.bin");
+
+        for (MarriageCertificate c : registeredList) {
+            if (c.getMarriageId().equals(certificate.getMarriageId())) {
+                Methods.myAlert("Marriage already registered.");
+                return;
+            }
+        }
+
+        Methods.writeCertificateBinaryFile(
+                "RegisteredMarriage.bin",
+                certificate
+        );
+
+        Methods.Alert("Marriage registered successfully.");
     }
 
     @javafx.fxml.FXML
@@ -65,5 +112,21 @@ public class RegisterMarriageController {
 
     @javafx.fxml.FXML
     public void searchApprovedMarriageFilterOnAction(ActionEvent actionEvent) {
+        ArrayList<MarriageCertificate> certificateList =
+                Methods.readCertificateBinaryFile("MarriageCertificateList.bin");
+
+        rmApprovedMarriageTV.getItems().clear();
+
+        String marriageId = searchApproveMarriageFIlterTF.getText().trim();
+
+        for (MarriageCertificate c : certificateList) {
+            if (c.getMarriageId().equalsIgnoreCase(marriageId)) {
+                rmApprovedMarriageTV.getItems().add(c);
+            }
+        }
+
+        if (rmApprovedMarriageTV.getItems().isEmpty()) {
+            Methods.myAlert("No marriage found.");
+        }
     }
 }

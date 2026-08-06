@@ -42,29 +42,23 @@
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor></TextField>
-            <Label layoutX="16.0" layoutY="75.0" text="Application ID" textFill="#f2ecec" />
-            <TextField fx:id="rmApplicantIdTF" editable="false" layoutX="12.0" layoutY="101.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+            <Label layoutX="18.0" layoutY="73.0" text="Bride Name" textFill="#f2ecec" />
+            <TextField fx:id="rmBrideNameTF" editable="false" layoutX="14.0" layoutY="99.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor></TextField>
-            <Label layoutX="18.0" layoutY="136.0" text="Bride Name" textFill="#f2ecec" />
-            <TextField fx:id="rmBrideNameTF" editable="false" layoutX="14.0" layoutY="162.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+            <Label layoutX="18.0" layoutY="133.0" text="Groom Name" textFill="#f2ecec" />
+            <TextField fx:id="rmGroomNameTF" editable="false" layoutX="14.0" layoutY="159.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor></TextField>
-            <Label layoutX="18.0" layoutY="196.0" text="Groom Name" textFill="#f2ecec" />
-            <TextField fx:id="rmGroomNameTF" editable="false" layoutX="14.0" layoutY="222.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
+            <Label layoutX="16.0" layoutY="192.0" text="Marriage Date" textFill="#f2ecec" />
+            <Label layoutX="18.0" layoutY="255.0" text="Cirtificate Number" textFill="#f2ecec" />
+            <DatePicker fx:id="rmMarriageDateDatePicker" layoutX="17.0" layoutY="216.0" prefHeight="25.0" prefWidth="240.0" style="-fx-background-color: gray;" />
+            <TextField fx:id="rmCertificateNumberTF" editable="false" layoutX="14.0" layoutY="280.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor></TextField>
-            <Label layoutX="16.0" layoutY="255.0" text="Marriage Date" textFill="#f2ecec" />
-            <Label layoutX="18.0" layoutY="318.0" text="Cirtificate Number" textFill="#f2ecec" />
-            <DatePicker fx:id="rmMarriageDateDatePicker" layoutX="17.0" layoutY="279.0" prefHeight="25.0" prefWidth="240.0" style="-fx-background-color: gray;" />
-            <TextField fx:id="rmCertificateNumberTF" editable="false" layoutX="14.0" layoutY="343.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor></TextField>
-            <Label layoutX="18.0" layoutY="381.0" text="Status" textFill="#f2ecec" />
             <Button layoutX="33.0" layoutY="458.0" mnemonicParsing="false" onAction="#registerMarriageOnAction" prefHeight="38.0" prefWidth="206.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Register Marriage">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -73,10 +67,6 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <TextField fx:id="rmStatusTF" editable="false" layoutX="13.0" layoutY="403.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor></TextField>
          </children>
       </Pane>
    </left>
@@ -91,11 +81,10 @@
             <TableView fx:id="rmApprovedMarriageTV" layoutX="17.0" layoutY="58.0" prefHeight="290.0" prefWidth="602.0" style="-fx-background-color: #214852;">
                <columns>
                   <TableColumn fx:id="rmMarriageIdTC" minWidth="75.20001029968262" prefWidth="97.59997367858887" text="Marriage ID" />
-                  <TableColumn fx:id="rmDateTC" minWidth="28.79998779296875" prefWidth="83.20001983642578" text="Date" />
-                  <TableColumn fx:id="rmBrideTC" prefWidth="117.60000610351562" text="Bride" />
-                  <TableColumn fx:id="rmGroomTC" prefWidth="105.60003662109375" text="Groom" />
-                  <TableColumn fx:id="rmStatusTC" prefWidth="94.39990234375" text="Status" />
-                  <TableColumn fx:id="rmCertificateNoTC" prefWidth="101.60000610351562" text="Certificate No." />
+                  <TableColumn fx:id="rmDateTC" minWidth="28.79998779296875" prefWidth="108.00000762939453" text="Date" />
+                  <TableColumn fx:id="rmBrideTC" prefWidth="119.19998168945312" text="Bride" />
+                  <TableColumn fx:id="rmGroomTC" prefWidth="141.5999755859375" text="Groom" />
+                  <TableColumn fx:id="rmCertificateNoTC" prefWidth="136.80001831054688" text="Certificate No." />
                </columns>
             </TableView>
             <Label layoutX="18.0" layoutY="388.0" text="Search by Marriage ID " textFill="#f2ecec" />
