@@ -32,7 +32,7 @@ public class GenerateDailyReportController {
     public void generateReport(ActionEvent actionEvent) {
     }
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void BackOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sayed/dashboard-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -42,7 +42,7 @@ public class GenerateDailyReportController {
         nextStage.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void BackAndGoToDashboardButtonOnAction(ActionEvent actionEvent) {
     }
 

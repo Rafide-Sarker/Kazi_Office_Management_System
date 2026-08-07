@@ -89,7 +89,7 @@ public class loginPageController {
 
             }else if (selectRoleUserLoginComboBox.getValue().equals("System Admin")){
                 if (User.systemAdmin.getUserName().equals(loginPageUserNameTF.getText()) && User.systemAdmin.getPassword().equals(loginPagePasswordPF.getText())){
-                    loginMethod("sayed/dashboard-view.fxml", actionEvent);
+                    loginMethod("sayed/system-admin-dashboard.fxml", actionEvent);
                 }else {
                     Methods.myAlert("Wrong User Name or Password");
                 }

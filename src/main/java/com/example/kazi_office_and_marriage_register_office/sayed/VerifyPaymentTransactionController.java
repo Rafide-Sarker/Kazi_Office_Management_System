@@ -32,4 +32,8 @@ public class VerifyPaymentTransactionController
         nextStage.setScene(scene);
         nextStage.show();
     }
+
+    @Deprecated
+    public void backOnAction(ActionEvent actionEvent) {
+    }
 }

@@ -37,7 +37,7 @@ public class SearchPaymentController {
     @javafx.fxml.FXML
     private TextField groomNameTF;
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void backonAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sayed/dashboard-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -51,7 +51,7 @@ public class SearchPaymentController {
     public void clearOnaction(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void backAndGoToDashboardButtononAction(ActionEvent actionEvent) {
     }
 
@@ -61,5 +61,13 @@ public class SearchPaymentController {
 
     @javafx.fxml.FXML
     public void searchButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    @Deprecated
+    public void backOnAction(ActionEvent actionEvent) {
+    }
+
+    @Deprecated
+    public void backButtonOnAction(ActionEvent actionEvent) {
     }
 }

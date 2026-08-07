@@ -34,7 +34,7 @@ public class ProccessRefundController {
     @javafx.fxml.FXML
     private TableColumn refundIdTC;
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void backOnAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sayed/dashboard-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -44,7 +44,7 @@ public class ProccessRefundController {
         nextStage.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void backAndGoToDashboardButtonOnAction(ActionEvent actionEvent) {
     }
 

@@ -30,7 +30,7 @@ public class GeneratePaymentReciptController {
     @javafx.fxml.FXML
     private TextField amountTF;
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void BackOnAction(ActionEvent actionEvent)throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sayed/dashboard-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -40,11 +40,15 @@ public class GeneratePaymentReciptController {
         nextStage.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void BackAndGoToDashboardButtonOnAction(ActionEvent actionEvent) {
     }
 
     @javafx.fxml.FXML
     public void generatePaymentButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    @Deprecated
+    public void BackButtonOnAction(ActionEvent actionEvent) {
     }
 }

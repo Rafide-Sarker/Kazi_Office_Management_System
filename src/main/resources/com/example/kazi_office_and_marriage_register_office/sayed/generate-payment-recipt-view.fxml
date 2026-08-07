@@ -24,7 +24,7 @@
       <TextField fx:id="groomNameTF" layoutX="127.0" layoutY="232.0" />
       <TextField fx:id="amountTF" layoutX="127.0" layoutY="268.0" />
       <Button layoutX="83.0" layoutY="390.0" mnemonicParsing="false" onAction="#generatePaymentButtonOnAction" text="Generate Payment" />
-      <Button layoutX="262.0" layoutY="390.0" mnemonicParsing="false" onAction="#BackAndGoToDashboardButtonOnAction" text="Back" />
+      <Button layoutX="262.0" layoutY="390.0" mnemonicParsing="false" onAction="#BackOnAction" text="Back" />
       <DatePicker fx:id="paymentDateDatePicker" layoutX="120.0" layoutY="309.0" />
       <ComboBox fx:id="paymentMethodComboBox" layoutX="140.0" layoutY="347.0" prefWidth="150.0" />
       <Label layoutX="226.0" layoutY="24.0" text="Generate Payment" />

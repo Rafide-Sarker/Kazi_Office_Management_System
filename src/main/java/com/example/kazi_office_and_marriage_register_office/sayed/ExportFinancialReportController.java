@@ -24,7 +24,7 @@ public class ExportFinancialReportController {
     @javafx.fxml.FXML
     private CheckBox monthlyCB;
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void backOnAction(ActionEvent actionEvent)throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sayed/dashboard-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -34,7 +34,7 @@ public class ExportFinancialReportController {
         nextStage.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void backAndGoToDashboardButtonOnAction(ActionEvent actionEvent) {
     }
 

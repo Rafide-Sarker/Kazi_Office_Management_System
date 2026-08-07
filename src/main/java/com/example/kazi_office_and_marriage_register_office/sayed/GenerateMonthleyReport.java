@@ -31,7 +31,7 @@ public class GenerateMonthleyReport {
     @javafx.fxml.FXML
     private TextField totalRefundTF;
 
-    @Deprecated
+    @javafx.fxml.FXML
     public void BackOnAction(ActionEvent actionEvent)throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sayed/dashboard-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -45,7 +45,7 @@ public class GenerateMonthleyReport {
     public void generateReport(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void BackAndGoToDashboardButtonOnAction(ActionEvent actionEvent) {
     }
 
