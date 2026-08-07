@@ -54,7 +54,7 @@ public class ScheduleMarriageController
                 appointmentId,
                 marriageDateDP.getValue(),
                 availableTimeSlotComboBox.getValue(),
-                false
+                "Pending"
         );
 
         Appointment.AppointmentBinaryFile("Appointment.bin",a);

@@ -52,31 +52,11 @@
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor></TextField>
-            <Label layoutX="18.0" layoutY="196.0" text="Bride Name" textFill="#f2ecec" />
-            <TextField fx:id="maBrideNameTextField" editable="false" layoutX="14.0" layoutY="222.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor></TextField>
-            <Label layoutX="16.0" layoutY="255.0" text="Groom Name" textFill="#f2ecec" />
-            <TextField fx:id="maGroomNameTextField" editable="false" layoutX="12.0" layoutY="281.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor></TextField>
-            <Label layoutX="18.0" layoutY="318.0" text="Contact Number" textFill="#f2ecec" />
-            <TextField fx:id="maContactNumberTextField" editable="false" layoutX="14.0" layoutY="344.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor></TextField>
-            <Label layoutX="16.0" layoutY="375.0" text="Status" textFill="#f2ecec" />
-            <TextField fx:id="maStatusTextField" editable="false" layoutX="12.0" layoutY="401.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor></TextField>
-            <Button layoutX="18.0" layoutY="464.0" mnemonicParsing="false" onAction="#conFirmButtonOnAction" prefWidth="110.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Confirm">
+            <Button layoutX="18.0" layoutY="211.0" mnemonicParsing="false" onAction="#conFirmButtonOnAction" prefWidth="110.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Confirm">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button layoutX="137.0" layoutY="464.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefWidth="110.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Cancel">
+            <Button layoutX="137.0" layoutY="211.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefWidth="110.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Cancel">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
@@ -93,19 +73,23 @@
             </Label>
             <TableView fx:id="maTableView" layoutX="27.0" layoutY="58.0" prefHeight="350.0" prefWidth="591.0" style="-fx-background-color: #214852;">
               <columns>
-                <TableColumn fx:id="maAppointmentIdTC" minWidth="90.0" prefWidth="103.20001792907715" text="Appointment ID" />
-                <TableColumn fx:id="maDateTC" minWidth="90.0" prefWidth="73.60003662109375" text="Date" />
-                  <TableColumn fx:id="maTimeTC" minWidth="64.79995727539062" prefWidth="95.20004272460938" text="Time" />
-                  <TableColumn fx:id="maBrideTC" prefWidth="101.5999755859375" text="Bride" />
-                  <TableColumn fx:id="maGroomTC" prefWidth="109.60006713867188" text="Groom" />
-                  <TableColumn fx:id="maStatusTC" prefWidth="88.79997558593755" text="Status" />
+                <TableColumn fx:id="maAppointmentIdTC" minWidth="90.0" prefWidth="139.20001792907715" text="Appointment ID" />
+                <TableColumn fx:id="maDateTC" minWidth="90.0" prefWidth="100.80001831054688" text="Date" />
+                  <TableColumn fx:id="maTimeTC" minWidth="64.79995727539062" prefWidth="190.4000244140625" text="Time" />
+                  <TableColumn fx:id="maStatusTC" prefWidth="161.59988403320312" text="Status" />
               </columns>
             </TableView>
-            <Button layoutX="304.0" layoutY="432.0" mnemonicParsing="false" onAction="#FilterSearchOnAction" prefWidth="110.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Search">
+            <Button layoutX="328.0" layoutY="432.0" mnemonicParsing="false" onAction="#FilterSearchOnAction" prefWidth="110.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Search">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <DatePicker fx:id="maSearchAppointmentDatePicker" layoutX="100.0" layoutY="432.0" />
+            <DatePicker fx:id="maSearchAppointmentDatePicker" layoutX="124.0" layoutY="432.0" />
+            <Label layoutX="29.0" layoutY="435.0" text="Search By Date" textFill="#f2ecec" />
+            <Button layoutX="459.0" layoutY="431.0" mnemonicParsing="false" onAction="#ClearOnAction" prefWidth="110.0" style="-fx-background-color: #C77D2A; -fx-border-radius: 5;" text="Clear">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children></AnchorPane>
    </center>
 </BorderPane>

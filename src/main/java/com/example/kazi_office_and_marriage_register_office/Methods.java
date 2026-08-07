@@ -21,6 +21,7 @@ public class Methods {
         return;
     }
 
+    //Read Binary File
     public static ArrayList<MarriageApplication> readBinaryFile(String pathName){
         ArrayList<MarriageApplication> applicationList = new ArrayList<>();
         try{
@@ -40,6 +41,7 @@ public class Methods {
         return applicationList;
     }
 
+    //reWrite Binary File
     public static void rewriteBinaryFile(String pathName, ArrayList<MarriageApplication> applicationList){
         try {
             File f = new File(pathName);
@@ -55,6 +57,25 @@ public class Methods {
         }
     }
 
+    //reWrite Certificate Binary FIle
+    public static void rewriteCertificateBinaryFile(String pathName, ArrayList<MarriageCertificate> certificateList) {
+
+        try {
+            FileOutputStream fos = new FileOutputStream(pathName);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            for (MarriageCertificate certificate : certificateList) {
+                oos.writeObject(certificate);
+            }
+
+            oos.close();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    //Write Certificate Binary File
     public static void writeCertificateBinaryFile(String pathName, MarriageCertificate certificate) {
 
         try {
@@ -79,6 +100,7 @@ public class Methods {
         }
     }
 
+    //Read Certificate Binary File
     public static ArrayList<MarriageCertificate> readCertificateBinaryFile(String pathName) {
 
         ArrayList<MarriageCertificate> certificateList = new ArrayList<>();
@@ -107,5 +129,54 @@ public class Methods {
         }
 
         return certificateList;
+    }
+
+    public static ArrayList<Appointment> readAppointmentBinaryFile(String pathName) {
+
+        ArrayList<Appointment> appointmentList = new ArrayList<>();
+
+        try {
+            File f = new File(pathName);
+
+            if (!f.exists()) {
+                return appointmentList;
+            }
+
+            FileInputStream fis = new FileInputStream(f);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true) {
+                Appointment appointment =
+                        (Appointment) ois.readObject();
+
+                appointmentList.add(appointment);
+            }
+
+        } catch (EOFException e) {
+            // Finished reading the file
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return appointmentList;
+    }
+
+    // Rewrite Appointment Binary File
+    public static void rewriteAppointmentBinaryFile(String pathName, ArrayList<Appointment> appointmentList) {
+
+        try {
+            File f = new File(pathName);
+            FileOutputStream fos = new FileOutputStream(f);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            for (Appointment appointment : appointmentList) {
+                oos.writeObject(appointment);
+            }
+
+            oos.close();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

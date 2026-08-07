@@ -123,4 +123,13 @@ public class RegisterMarriageController {
             Methods.myAlert("No marriage found.");
         }
     }
+
+    @javafx.fxml.FXML
+    public void ClearOnAction(ActionEvent actionEvent) {
+        ArrayList<MarriageCertificate> certificateList = Methods.readCertificateBinaryFile("MarriageCertificateList.bin");
+
+        searchApproveMarriageFIlterTF.clear();
+        rmApprovedMarriageTV.getItems().clear();
+        rmApprovedMarriageTV.getItems().addAll(certificateList);
+    }
 }

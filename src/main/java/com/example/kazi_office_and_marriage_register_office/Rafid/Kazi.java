@@ -21,39 +21,7 @@ public class Kazi extends User {
     public Kazi() {
     }
 
-    public static Kazi kazi = new Kazi("Kazi","Kazi", "kazi@gmail.com", "Dhaka", "Kazi", "12345678", 01616161616, "kazi101", "Lis101", "Office", "Kazi", "Active");
-
-    public String getKaziId() {
-        return kaziId;
-    }
-
-    public void setKaziId(String kaziId) {
-        this.kaziId = kaziId;
-    }
-
-    public String getLicenseNo() {
-        return licenseNo;
-    }
-
-    public void setLicenseNo(String licenseNo) {
-        this.licenseNo = licenseNo;
-    }
-
-    public String getOfficeName() {
-        return officeName;
-    }
-
-    public void setOfficeName(String officeName) {
-        this.officeName = officeName;
-    }
-
-    public String getDesignation() {
-        return designation;
-    }
-
-    public void setDesignation(String designation) {
-        this.designation = designation;
-    }
+    public static Kazi kazi = new Kazi("Kazi","Kazi", "kazi@gmail.com", "Dhaka", "Kazi", "12345678", 0161616161, "kazi101", "Lis101", "Office", "Kazi", "Active");
 
     public String getStatus() {
         return status;
@@ -74,37 +42,6 @@ public class Kazi extends User {
                 '}';
     }
 
-    public Boolean reviewApplication(){
-        return null;
-    }
-
-    public Boolean verifyBrideInformation(){
-        return null;
-    }
-
-    public Boolean verifyGroomInformation(){
-        return null;
-    }
-
-    public Boolean approveMarriage(){
-        return null;
-    }
-
-    public Boolean rejectApplication(){
-        return null;
-    }
-
-    public Boolean generateMarriageCertificate(){
-        return null;
-    }
-
-    public Boolean manageAppointments(){
-        return null;
-    }
-
-    public Boolean searchMarriageRecords(){
-        return null;
-    }
 
 
 }

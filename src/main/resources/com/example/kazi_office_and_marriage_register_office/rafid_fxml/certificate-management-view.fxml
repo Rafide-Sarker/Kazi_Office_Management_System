@@ -108,6 +108,11 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
+            <Button layoutX="443.0" layoutY="383.0" mnemonicParsing="false" onAction="#ClearOnAction" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Clear">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </AnchorPane>
    </center>

@@ -11,15 +11,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class CertificateManagementController {
-    @javafx.fxml.FXML
-    private BorderPane certificateManagementPane;
+
     @javafx.fxml.FXML
     private TableColumn<MarriageCertificate, String> cmBrideTableColumn;
     @javafx.fxml.FXML
@@ -72,7 +70,7 @@ public class CertificateManagementController {
     }
 
     @javafx.fxml.FXML
-    public void issueDuplicateOnAction(ActionEvent actionEvent) throws IOException {
+    public void issueDuplicateOnAction(){
         if (!cmCertificateNoTextField.getText().isEmpty() && cmIssueDateDatePicker.getValue() != null && !cmMarriageIdTextField.getText().isEmpty() &&!cmRegistrationNoTextField.getText().isEmpty() && !cmBrideNameTextField.getText().isEmpty() && !cmGroomNameTextField.getText().isEmpty()){
             Methods.Alert("Duplicate Certificate Issued Successfully.");
         }
@@ -89,14 +87,15 @@ public class CertificateManagementController {
     }
 
     @javafx.fxml.FXML
-    public void verifyCertificateOnAction(ActionEvent actionEvent) {
+    public void verifyCertificateOnAction() {
         if (!cmCertificateNoTextField.getText().isEmpty() && cmIssueDateDatePicker.getValue() != null && !cmMarriageIdTextField.getText().isEmpty() &&!cmRegistrationNoTextField.getText().isEmpty() && !cmBrideNameTextField.getText().isEmpty() && !cmGroomNameTextField.getText().isEmpty()){
             Methods.Alert("Certificate Verified Successfully.");
         }
 
     }
 
-    public void searchRegisteredMarriageOnAction(ActionEvent actionEvent) {
+    @javafx.fxml.FXML
+    public void searchRegisteredMarriageOnAction() {
         for (MarriageCertificate c: certificateList){
             if (c.getCertificateNo().equals(cmSearchCertificateNoTextField.getText())){
                 CertificateManagementTableView.getItems().clear();
@@ -107,4 +106,12 @@ public class CertificateManagementController {
         Methods.myAlert("Certificate does not exist");
     }
 
+    @javafx.fxml.FXML
+    public void ClearOnAction() {
+        ArrayList<MarriageCertificate> certificateList = Methods.readCertificateBinaryFile("MarriageCertificateList.bin");
+
+        cmSearchCertificateNoTextField.clear();
+        CertificateManagementTableView.getItems().clear();
+        CertificateManagementTableView.getItems().addAll(certificateList);
+    }
 }
