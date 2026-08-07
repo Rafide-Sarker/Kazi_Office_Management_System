@@ -2,6 +2,7 @@ package com.example.kazi_office_and_marriage_register_office;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class MarriageApplication implements Serializable {
@@ -249,6 +250,7 @@ public class MarriageApplication implements Serializable {
             //
         }
     }
+
     public static MarriageApplication readApplication(String pathName) {
 
         File f = new File(pathName);
@@ -275,6 +277,58 @@ public class MarriageApplication implements Serializable {
 
         return null;
     }
+
+    public static ArrayList<MarriageApplication> readAllApplications(String pathName) {
+
+        ArrayList<MarriageApplication> applicationList = new ArrayList<>();
+
+        File f = new File(pathName);
+
+        if (!f.exists()) {
+            return applicationList;
+        }
+
+        try {
+            FileInputStream fis = new FileInputStream(f);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true) {
+                MarriageApplication application =
+                        (MarriageApplication) ois.readObject();
+
+                applicationList.add(application);
+            }
+
+        } catch (EOFException e) {
+            //
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return applicationList;
+    }
+
+
+    public static void rewriteBinaryFile(String pathName,
+                                         ArrayList<MarriageApplication> applicationList) {
+
+        try {
+
+            FileOutputStream fos = new FileOutputStream(pathName);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            for (MarriageApplication application : applicationList) {
+                oos.writeObject(application);
+            }
+
+            oos.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     public void setApplicationID(String applicationID) {
         this.applicationID = applicationID;

@@ -1,9 +1,11 @@
 package com.example.kazi_office_and_marriage_register_office;
 
+import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Random;
 
-public class Appointment {
+public class Appointment implements Serializable {
     private String appointmentId;
     private LocalDate appointmentDate;
     private LocalTime time;
@@ -59,6 +61,60 @@ public class Appointment {
                 ", time=" + time +
                 ", status=" + status +
                 '}';
+    }
+
+    public static <T> void AppointmentBinaryFile(String pathName , T object){
+
+       try{
+           File f = new File(pathName);
+           FileOutputStream fos = null;
+           ObjectOutputStream oos = null;
+
+           if(f.exists()){
+               fos = new FileOutputStream(f , true);
+               oos = new appendableObjectOutputStream(fos);
+           }
+           else{
+               fos = new FileOutputStream(f);
+               oos = new ObjectOutputStream(fos);
+           }
+           oos.writeObject(object);
+           oos.close();
+       } catch (IOException e) {
+           //
+       }
+    }
+
+    public static Appointment readAppointment(String pathName) {
+
+        File file = new File(pathName);
+
+        if (!file.exists()) {
+            return null;
+        }
+
+        Appointment appointment = null;
+
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true) {
+                appointment = (Appointment) ois.readObject();
+            }
+
+        } catch (EOFException e) {
+            return appointment;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static String generateAppointmentId(){
+        Random r = new Random();
+
+        return LocalDate.now().getYear()+String.format("%04d",r.nextInt(10000));
     }
 
     public void schedule(){

@@ -76,6 +76,7 @@ public class ReviewApplicationController
 
     @javafx.fxml.FXML
     public void saveAndSubmitButtonOnAction(ActionEvent actionEvent) throws IOException {
+
         try{
             File f = new File("SavedApplications.bin");
             FileOutputStream fos = null;
