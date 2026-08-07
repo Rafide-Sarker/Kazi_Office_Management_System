@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="497.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kazi_office_and_marriage_register_office.yasin.CorrectionRequestController">
    <children>
       <Label layoutX="100.0" layoutY="39.0" prefHeight="27.0" prefWidth="354.0" text="        Marriage Record Correction Request" textFill="#bf1010">
@@ -34,5 +33,7 @@
       <Button layoutX="284.0" layoutY="389.0" mnemonicParsing="false" onAction="#chooseFileButtonOnAction" text="Choose File" />
       <Button layoutX="141.0" layoutY="448.0" mnemonicParsing="false" onAction="#submitAndGoToDashBoardButtonOnAction" prefHeight="26.0" prefWidth="96.0" text="Submit " />
       <Button layoutX="349.0" layoutY="448.0" mnemonicParsing="false" onAction="#backAndGoToDashBoardButtonOnAction" prefHeight="26.0" prefWidth="96.0" text="Back" />
+      <Label layoutX="358.0" layoutY="93.0" prefHeight="18.0" prefWidth="88.0" text="Application ID :" />
+      <Label fx:id="applicationIdLabel" layoutX="454.0" layoutY="93.0" prefHeight="18.0" prefWidth="125.0" />
    </children>
 </AnchorPane>

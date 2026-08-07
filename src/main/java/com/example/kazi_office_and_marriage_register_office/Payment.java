@@ -1,22 +1,40 @@
 package com.example.kazi_office_and_marriage_register_office;
 
-public class Payment {
+import java.io.*;
+import java.time.LocalDate;
+import java.util.Random;
+
+public class Payment implements Serializable {
     private String paymentId;
     private double amount;
     private String paymentMethod;
     private String paymentStatus;
+    private String mobileNumber;
+    private String applicationId;
+
     private Receipt receipt;  // composition
 
     public Payment (){
         this.receipt = new Receipt();
     }
 
-    public Payment(String paymentId, double amount, String paymentMethod, String paymentStatus) {
+    public Payment(String paymentId, double amount, String paymentMethod, String paymentStatus, String mobileNumber,String applicationId) {
+
         this.paymentId = paymentId;
         this.amount = amount;
         this.paymentMethod = paymentMethod;
         this.paymentStatus = paymentStatus;
+        this.mobileNumber = mobileNumber;
+        this.applicationId = applicationId;
         this.receipt = new Receipt();
+    }
+
+    public String getApplicationId() {
+        return applicationId;
+    }
+
+    public void setApplicationId(String applicationId) {
+        this.applicationId = applicationId;
     }
 
     public String getPaymentId() {
@@ -59,6 +77,14 @@ public class Payment {
         this.receipt = receipt;
     }
 
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
     @Override
     public String toString() {
         return "Payment{" +
@@ -67,6 +93,95 @@ public class Payment {
                 ", paymentMethod='" + paymentMethod + '\'' +
                 ", paymentStatus='" + paymentStatus + '\'' +
                 '}';
+    }
+
+    public static <T> void savePaymentBinaryFile(String pathName , T object){
+
+        try{
+            File f = new File(pathName);
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+            if(f.exists()){
+                fos = new FileOutputStream(f,true);
+                oos = new appendableObjectOutputStream(fos);
+            }
+            else {
+                fos = new FileOutputStream(f,true);
+                oos = new ObjectOutputStream(fos);
+            }
+            oos.writeObject(object);
+            oos.close();
+        }
+        catch (Exception e){
+            //
+        }
+    }
+
+    public static Payment readPayment(String pathName) {
+
+        File f = new File(pathName);
+
+        if (!f.exists()) {
+            return null;
+        }
+
+        Payment payment = null;
+
+        try {
+            FileInputStream fis = new FileInputStream(f);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true) {
+                payment = (Payment) ois.readObject();
+            }
+
+        } catch (EOFException e) {
+            return payment;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public static String generateTransactionId() {
+        Random r = new Random();
+        return "TXN" + LocalDate.now().getYear()
+                + String.format("%06d", r.nextInt(1000000));
+    }
+
+    public static String generatePaymentId(){
+        Random r = new Random();
+        return LocalDate.now().getYear() + String.format("%04d",r.nextInt(10000));
+    }
+
+    public static Payment searchPaymentByApplicationId(String pathName, String applicationId) {
+
+        File f = new File(pathName);
+
+        if (!f.exists()) {
+            return null;
+        }
+
+        try {
+            FileInputStream fis = new FileInputStream(f);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true) {
+                Payment payment = (Payment) ois.readObject();
+
+                if (payment.getApplicationId().equals(applicationId)) {
+                    return payment;
+                }
+            }
+
+        } catch (EOFException e) {
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     public void pay(){

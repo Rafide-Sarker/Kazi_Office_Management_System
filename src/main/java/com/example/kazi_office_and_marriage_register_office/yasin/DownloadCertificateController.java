@@ -1,6 +1,6 @@
 package com.example.kazi_office_and_marriage_register_office.yasin;
 
-import com.example.kazi_office_and_marriage_register_office.HelloApplication;
+import com.example.kazi_office_and_marriage_register_office.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -24,7 +24,29 @@ public class DownloadCertificateController
     @javafx.fxml.FXML
     public void downloadPdfAndGoToDashBoardButtonOnAction(ActionEvent actionEvent) throws IOException {
 
-        downloadPdfStatusTextFiled.setText("Downloaded PDF");
+        MarriageApplication application =
+                MarriageApplication.searchApplicationByUser("MarriageApplication.bin",
+                        User.currentUser.getEmail()
+                );
+
+        Payment payment = Payment.readPayment("Payment.bin");
+        if(payment == null || !"Paid".equals(payment.getPaymentStatus())){
+            Methods.myAlert("Please complete the registration fee payment first.");
+            return;
+        }
+
+        if (application == null) {
+            Methods.myAlert("No application found.");
+            return;
+        }
+
+        if (!"Approved".equals(application.getStatus())) {
+            downloadPdfStatusTextFiled.setText("Not Approved");
+            Methods.myAlert("Marriage is not approved yet.");
+            return;
+        }
+
+        downloadPdfStatusTextFiled.setText("Download Successful");
 
         Alert myAlert = new Alert(Alert.AlertType.INFORMATION);
         myAlert.setTitle("Success");

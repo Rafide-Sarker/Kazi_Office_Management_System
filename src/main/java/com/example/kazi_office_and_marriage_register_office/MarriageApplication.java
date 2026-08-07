@@ -2,6 +2,7 @@ package com.example.kazi_office_and_marriage_register_office;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class MarriageApplication implements Serializable {
@@ -240,13 +241,23 @@ public class MarriageApplication implements Serializable {
 
         try {
             File f = new File(pathName);
-            FileOutputStream fos = new FileOutputStream(f);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new appendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+
             oos.writeObject(object);
             oos.close();
 
-        }catch (Exception e){
-            //
+        } catch (Exception e){
+            e.printStackTrace();
         }
     }
     public static MarriageApplication readApplication(String pathName) {
@@ -273,6 +284,80 @@ public class MarriageApplication implements Serializable {
             e.printStackTrace();
         }
 
+        return null;
+    }
+
+    public static ArrayList<MarriageApplication> readAllApplications(String pathName) {
+
+        ArrayList<MarriageApplication> applicationList = new ArrayList<>();
+
+        File f = new File(pathName);
+
+        if (!f.exists()) {
+            return applicationList;
+        }
+
+        try {
+            FileInputStream fis = new FileInputStream(f);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true) {
+                MarriageApplication application =
+                        (MarriageApplication) ois.readObject();
+
+                applicationList.add(application);
+            }
+
+        } catch (EOFException e) {
+            //
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return applicationList;
+    }
+
+
+    public static void rewriteBinaryFile(String pathName,
+                                         ArrayList<MarriageApplication> applicationList) {
+
+        try {
+
+            FileOutputStream fos = new FileOutputStream(pathName);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            for (MarriageApplication application : applicationList) {
+                oos.writeObject(application);
+            }
+
+            oos.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static MarriageApplication searchApplicationByUser(String pathName, String email) {
+
+        ArrayList<MarriageApplication> applicationList =
+                readAllApplications(pathName);
+
+        System.out.println("Total Applications = " + applicationList.size());
+
+        for (MarriageApplication app : applicationList) {
+
+            System.out.println("Searching For : " + email);
+            System.out.println("Bride Email : " + app.getEmailBride());
+            System.out.println("Groom Email : " + app.getEmailGroom());
+
+            if (app.getEmailBride().equals(email)
+                    || app.getEmailGroom().equals(email)) {
+                System.out.println("FOUND!");
+                return app;
+            }
+        }
+
+        System.out.println("NOT FOUND");
         return null;
     }
 

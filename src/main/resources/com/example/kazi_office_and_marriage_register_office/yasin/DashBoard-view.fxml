@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="boarderPaneDashBoard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kazi_office_and_marriage_register_office.yasin.DashBoardController">
+<BorderPane fx:id="boarderPaneDashBoard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kazi_office_and_marriage_register_office.yasin.DashBoardController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
@@ -34,7 +34,7 @@
       </MenuBar>
    </top>
    <left>
-      <VBox prefHeight="441.0" prefWidth="197.0" spacing="20.0" style="-fx-background-color: light blue;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="441.0" prefWidth="197.0" spacing="30.0" style="-fx-background-color: light blue;" BorderPane.alignment="CENTER">
          <children>
             <Button mnemonicParsing="false" onAction="#applyForMarriageButtonOnAction" prefHeight="26.0" prefWidth="203.0" text=" Apply for Marriage " textFill="#3c22bf" />
             <Button mnemonicParsing="false" onAction="#uploadDocumentsButtonOnAction" prefHeight="26.0" prefWidth="214.0" text="Upload Documents" textFill="#2d19c2" />
@@ -55,7 +55,7 @@
       </VBox>
    </left>
    <center>
-      <AnchorPane prefHeight="406.0" prefWidth="537.0" style="-fx-background-color: #FFF8F3;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="506.0" prefWidth="537.0" style="-fx-background-color: #FFF8F3;" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="161.0" layoutY="143.0" prefHeight="102.0" prefWidth="153.0" text="WELCOME !" textFill="#17532b">
                <font>
