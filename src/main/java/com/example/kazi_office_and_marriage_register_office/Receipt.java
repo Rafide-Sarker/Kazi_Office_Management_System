@@ -1,19 +1,19 @@
 package com.example.kazi_office_and_marriage_register_office;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Random;
 
-public class Receipt {
+public class Receipt implements Serializable {
 
-    private int receiptId;
-    private String receiptNumber;
+    private String receiptId;
     private LocalDate issueDate;
     private double paymentAmount;
     private String paymentMethod;
     private String paymentStatus;
 
-    public Receipt(int receiptId, String receiptNumber, LocalDate issueDate, double paymentAmount, String paymentMethod, String paymentStatus) {
+    public Receipt(String receiptId, LocalDate issueDate, double paymentAmount, String paymentMethod, String paymentStatus) {
         this.receiptId = receiptId;
-        this.receiptNumber = receiptNumber;
         this.issueDate = issueDate;
         this.paymentAmount = paymentAmount;
         this.paymentMethod = paymentMethod;
@@ -23,20 +23,12 @@ public class Receipt {
     public Receipt() {
     }
 
-    public int getReceiptId() {
+    public String getReceiptId() {
         return receiptId;
     }
 
-    public void setReceiptId(int receiptId) {
+    public void setReceiptId(String receiptId) {
         this.receiptId = receiptId;
-    }
-
-    public String getReceiptNumber() {
-        return receiptNumber;
-    }
-
-    public void setReceiptNumber(String receiptNumber) {
-        this.receiptNumber = receiptNumber;
     }
 
     public LocalDate getIssueDate() {
@@ -75,12 +67,17 @@ public class Receipt {
     public String toString() {
         return "Receipt{" +
                 "receiptId=" + receiptId +
-                ", receiptNumber='" + receiptNumber + '\'' +
                 ", issueDate=" + issueDate +
                 ", paymentAmount=" + paymentAmount +
                 ", paymentMethod='" + paymentMethod + '\'' +
                 ", paymentStatus='" + paymentStatus + '\'' +
                 '}';
+    }
+
+    public static String generateReceiptID() {
+        Random r = new Random();
+        return LocalDate.now().getYear() +
+                String.format("%04d", r.nextInt(10000));
     }
 
     public boolean generateReceipt(){
