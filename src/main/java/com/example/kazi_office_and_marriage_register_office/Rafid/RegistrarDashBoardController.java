@@ -57,7 +57,7 @@ public class RegistrarDashBoardController {
 
     @javafx.fxml.FXML
     public void generateReportsOnAction(ActionEvent actionEvent)throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("rafid_fxml/registry-management-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("rafid_fxml/generate-report-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage nextStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         nextStage.setTitle("Kazi Office");

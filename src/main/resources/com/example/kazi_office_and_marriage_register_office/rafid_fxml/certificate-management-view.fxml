@@ -71,7 +71,6 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label layoutX="18.0" layoutY="380.0" text="Status" textFill="#f2ecec" />
             <Button layoutX="33.0" layoutY="494.0" mnemonicParsing="false" onAction="#issueDuplicateOnAction" prefHeight="23.0" prefWidth="195.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Issue Duplicate">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -81,10 +80,6 @@
                </cursor>
             </Button>
             <DatePicker fx:id="cmIssueDateDatePicker" layoutX="16.0" layoutY="347.0" prefHeight="25.0" prefWidth="244.0" />
-            <TextField fx:id="cmStatusTextField" editable="false" layoutX="15.0" layoutY="397.0" prefHeight="25.0" prefWidth="247.0" style="-fx-background-color: gray;">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor></TextField>
          </children>
       </Pane>
    </left>
@@ -100,8 +95,8 @@
                <columns>
                   <TableColumn fx:id="cmCertificateNoTableColumn" minWidth="75.20001029968262" prefWidth="156.8000545501709" text="Certificate No." />
                   <TableColumn fx:id="cmBrideTableColumn" prefWidth="141.60000610351562" text="Bride" />
-                  <TableColumn fx:id="cmGroomTableColumn" prefWidth="205.59994506835938" text="Groom" />
-                  <TableColumn fx:id="cmStatusTableColumn" prefWidth="99.199951171875" text="Status" />
+                  <TableColumn fx:id="cmGroomTableColumn" prefWidth="172.00006103515625" text="Groom" />
+                  <TableColumn fx:id="cmStatusTableColumn" prefWidth="132.79989624023438" text="Issue Date" />
                </columns>
             </TableView>
             <Label layoutX="18.0" layoutY="388.0" text="Search  Certificate No." textFill="#f2ecec" />

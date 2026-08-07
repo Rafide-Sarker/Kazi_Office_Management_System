@@ -112,7 +112,7 @@ public class GenerateCertificateController{
 
     @javafx.fxml.FXML
     public void BackFromOnAction(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("rafid_fxml/registrar-dashboard-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("rafid_fxml/kazi-dashboard-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage nextStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         nextStage.setTitle("Kazi Office");
