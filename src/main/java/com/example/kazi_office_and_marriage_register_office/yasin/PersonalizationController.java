@@ -133,7 +133,6 @@ public class PersonalizationController
         MarriageApplication.writeBinaryFile("MarriageApplication.bin", application);
 
 
-
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("yasin/confirm-marriage-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage nextStage =(Stage)((Node)actionEvent.getSource()).getScene().getWindow();

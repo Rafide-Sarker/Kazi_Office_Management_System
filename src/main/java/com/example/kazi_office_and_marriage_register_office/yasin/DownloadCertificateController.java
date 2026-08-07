@@ -1,9 +1,6 @@
 package com.example.kazi_office_and_marriage_register_office.yasin;
 
-import com.example.kazi_office_and_marriage_register_office.HelloApplication;
-import com.example.kazi_office_and_marriage_register_office.MarriageApplication;
-import com.example.kazi_office_and_marriage_register_office.Methods;
-import com.example.kazi_office_and_marriage_register_office.Payment;
+import com.example.kazi_office_and_marriage_register_office.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -28,7 +25,9 @@ public class DownloadCertificateController
     public void downloadPdfAndGoToDashBoardButtonOnAction(ActionEvent actionEvent) throws IOException {
 
         MarriageApplication application =
-                MarriageApplication.readApplication("MarriageApplication.bin");
+                MarriageApplication.searchApplicationByUser("MarriageApplication.bin",
+                        User.currentUser.getEmail()
+                );
 
         Payment payment = Payment.readPayment("Payment.bin");
         if(payment == null || !"Paid".equals(payment.getPaymentStatus())){

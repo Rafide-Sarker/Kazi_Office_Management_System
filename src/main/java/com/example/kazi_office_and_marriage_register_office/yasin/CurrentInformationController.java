@@ -2,6 +2,7 @@ package com.example.kazi_office_and_marriage_register_office.yasin;
 
 import com.example.kazi_office_and_marriage_register_office.HelloApplication;
 import com.example.kazi_office_and_marriage_register_office.MarriageApplication;
+import com.example.kazi_office_and_marriage_register_office.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -34,7 +35,13 @@ public class CurrentInformationController
 
     @javafx.fxml.FXML
     public void initialize() {
-        application = MarriageApplication.readApplication("MarriageApplication.bin");
+        System.out.println("Current User Email = " + User.currentUser.getEmail());
+
+        application = MarriageApplication.searchApplicationByUser("MarriageApplication.bin",
+                User.currentUser.getEmail()
+        );
+
+        System.out.println("Application = " + application);
 
         if(application == null){
             return;

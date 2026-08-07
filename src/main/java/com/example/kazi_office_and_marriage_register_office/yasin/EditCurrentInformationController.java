@@ -52,6 +52,9 @@ public class EditCurrentInformationController
 
     @javafx.fxml.FXML
     public void initialize() {
+        application = MarriageApplication.searchApplicationByUser("MarriageApplication.bin",
+                User.currentUser.getEmail()
+        );
     }
 
 

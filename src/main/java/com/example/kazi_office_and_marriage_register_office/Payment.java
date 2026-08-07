@@ -9,8 +9,8 @@ public class Payment implements Serializable {
     private double amount;
     private String paymentMethod;
     private String paymentStatus;
-    private String transactionId;
     private String mobileNumber;
+    private String applicationId;
 
     private Receipt receipt;  // composition
 
@@ -18,15 +18,23 @@ public class Payment implements Serializable {
         this.receipt = new Receipt();
     }
 
-    public Payment(String paymentId, double amount, String paymentMethod, String paymentStatus, String transactionId, String mobileNumber) {
+    public Payment(String paymentId, double amount, String paymentMethod, String paymentStatus, String mobileNumber,String applicationId) {
 
         this.paymentId = paymentId;
         this.amount = amount;
         this.paymentMethod = paymentMethod;
         this.paymentStatus = paymentStatus;
-        this.transactionId = transactionId;
         this.mobileNumber = mobileNumber;
+        this.applicationId = applicationId;
         this.receipt = new Receipt();
+    }
+
+    public String getApplicationId() {
+        return applicationId;
+    }
+
+    public void setApplicationId(String applicationId) {
+        this.applicationId = applicationId;
     }
 
     public String getPaymentId() {
@@ -67,14 +75,6 @@ public class Payment implements Serializable {
 
     public void setReceipt(Receipt receipt) {
         this.receipt = receipt;
-    }
-
-    public String getTransactionId() {
-        return transactionId;
-    }
-
-    public void setTransactionId(String transactionId) {
-        this.transactionId = transactionId;
     }
 
     public String getMobileNumber() {
@@ -144,9 +144,44 @@ public class Payment implements Serializable {
         return null;
     }
 
+    public static String generateTransactionId() {
+        Random r = new Random();
+        return "TXN" + LocalDate.now().getYear()
+                + String.format("%06d", r.nextInt(1000000));
+    }
+
     public static String generatePaymentId(){
         Random r = new Random();
         return LocalDate.now().getYear() + String.format("%04d",r.nextInt(10000));
+    }
+
+    public static Payment searchPaymentByApplicationId(String pathName, String applicationId) {
+
+        File f = new File(pathName);
+
+        if (!f.exists()) {
+            return null;
+        }
+
+        try {
+            FileInputStream fis = new FileInputStream(f);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true) {
+                Payment payment = (Payment) ois.readObject();
+
+                if (payment.getApplicationId().equals(applicationId)) {
+                    return payment;
+                }
+            }
+
+        } catch (EOFException e) {
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     public void pay(){
