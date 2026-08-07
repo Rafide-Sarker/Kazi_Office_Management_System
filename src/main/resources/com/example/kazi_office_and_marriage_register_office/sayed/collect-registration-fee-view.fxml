@@ -20,6 +20,6 @@
       <Label layoutX="43.0" layoutY="182.0" text="Transaction ID: " />
       <TextField fx:id="transactionIdTextField" layoutX="140.0" layoutY="178.0" />
       <Button layoutX="140.0" layoutY="227.0" mnemonicParsing="false" onAction="#completePaymentButtonOnAction" text="Complete Payment " />
-      <Button layoutX="177.0" layoutY="261.0" mnemonicParsing="false" onAction="#backButtonOnAction" text=" Back" />
+      <Button layoutX="177.0" layoutY="261.0" mnemonicParsing="false" onAction="#backAndGoToDashboardButtonOnAction" text=" Back" />
    </children>
 </AnchorPane>

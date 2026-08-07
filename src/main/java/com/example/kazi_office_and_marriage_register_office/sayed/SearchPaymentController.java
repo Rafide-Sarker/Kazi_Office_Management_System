@@ -5,12 +5,39 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class SearchPaymentController {
     @javafx.fxml.FXML
+    private TextField reciptIdTF;
+    @javafx.fxml.FXML
+    private TableColumn amountTC;
+    @javafx.fxml.FXML
+    private TableColumn marriageIdTC;
+    @javafx.fxml.FXML
+    private ComboBox statusComboBox;
+    @javafx.fxml.FXML
+    private TextField brideNameTF;
+    @javafx.fxml.FXML
+    private TableColumn statusTC;
+    @javafx.fxml.FXML
+    private TextField paymentIdTF;
+    @javafx.fxml.FXML
+    private TableView searchPaymentTableView;
+    @javafx.fxml.FXML
+    private TableColumn paymentIdTC;
+    @javafx.fxml.FXML
+    private TableColumn dateTC;
+    @javafx.fxml.FXML
+    private TextField groomNameTF;
+
+    @Deprecated
     public void backonAction(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sayed/dashboard-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -20,7 +47,19 @@ public class SearchPaymentController {
         nextStage.show();
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void clearOnaction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void backAndGoToDashboardButtononAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void clearButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void searchButtonOnAction(ActionEvent actionEvent) {
     }
 }

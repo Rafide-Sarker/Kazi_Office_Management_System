@@ -5,12 +5,26 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class ExportFinancialReportController {
     @javafx.fxml.FXML
+    private DatePicker fromDateDatePicker;
+    @javafx.fxml.FXML
+    private DatePicker toDateDP;
+    @javafx.fxml.FXML
+    private CheckBox dailyCB;
+    @javafx.fxml.FXML
+    private ComboBox reportTypeComboBox;
+    @javafx.fxml.FXML
+    private CheckBox monthlyCB;
+
+    @Deprecated
     public void backOnAction(ActionEvent actionEvent)throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sayed/dashboard-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -18,5 +32,13 @@ public class ExportFinancialReportController {
         nextStage.setTitle("DashBoard!");
         nextStage.setScene(scene);
         nextStage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void backAndGoToDashboardButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void exportButtonOnAction(ActionEvent actionEvent) {
     }
 }

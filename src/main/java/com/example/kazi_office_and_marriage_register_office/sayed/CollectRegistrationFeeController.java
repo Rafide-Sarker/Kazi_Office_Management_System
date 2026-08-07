@@ -30,7 +30,7 @@ public class CollectRegistrationFeeController
     public void initialize() {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void backButtonOnAction(ActionEvent actionEvent)throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sayed/dashboard-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -54,5 +54,9 @@ public class CollectRegistrationFeeController
         nextStage.setTitle("DashBoard!");
         nextStage.setScene(scene);
         nextStage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void backAndGoToDashboardButtonOnAction(ActionEvent actionEvent) {
     }
 }

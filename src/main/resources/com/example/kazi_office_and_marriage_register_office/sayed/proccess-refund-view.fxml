@@ -13,22 +13,22 @@
       <Label layoutX="32.0" layoutY="73.0" text="Marriage ID" />
       <Label layoutX="32.0" layoutY="105.0" text="Payment ID" />
       <Label layoutX="43.0" layoutY="146.0" text="Reason" />
-      <Button layoutX="38.0" layoutY="175.0" mnemonicParsing="false" text="Approve" />
-      <Button layoutX="134.0" layoutY="175.0" mnemonicParsing="false" text="Reject" />
-      <TextField layoutX="126.0" layoutY="36.0" />
-      <TextField layoutX="126.0" layoutY="78.0" />
-      <TextField layoutX="126.0" layoutY="110.0" />
-      <TextField layoutX="126.0" layoutY="142.0" />
-      <TableView layoutX="36.0" layoutY="236.0" prefHeight="200.0" prefWidth="576.0">
+      <Button layoutX="38.0" layoutY="175.0" mnemonicParsing="false" onAction="#approveButtonOnAction" text="Approve" />
+      <Button layoutX="134.0" layoutY="175.0" mnemonicParsing="false" onAction="#rejectButtonOnAction" text="Reject" />
+      <TextField fx:id="refundIdTextField" layoutX="126.0" layoutY="36.0" />
+      <TextField fx:id="marriageIdTF" layoutX="126.0" layoutY="78.0" />
+      <TextField fx:id="paymentIdTF" layoutX="126.0" layoutY="110.0" />
+      <TextField fx:id="reasonTF" layoutX="126.0" layoutY="142.0" />
+      <TableView fx:id="refundManagetableView" layoutX="36.0" layoutY="236.0" prefHeight="200.0" prefWidth="576.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Refund ID" />
-          <TableColumn prefWidth="113.59992218017578" text="Marriage ID" />
-            <TableColumn prefWidth="114.4000244140625" text="Amount" />
-            <TableColumn prefWidth="127.199951171875" text="Reason" />
-            <TableColumn prefWidth="145.59994506835938" text="Status" />
+          <TableColumn fx:id="refundIdTC" prefWidth="75.0" text="Refund ID" />
+          <TableColumn fx:id="marriageIdTC" prefWidth="113.59992218017578" text="Marriage ID" />
+            <TableColumn fx:id="amountTC" prefWidth="114.4000244140625" text="Amount" />
+            <TableColumn fx:id="reasonTC" prefWidth="127.199951171875" text="Reason" />
+            <TableColumn fx:id="statusTC" prefWidth="145.59994506835938" text="Status" />
         </columns>
       </TableView>
-      <Button layoutX="214.0" layoutY="175.0" mnemonicParsing="false" onAction="#backOnAction" text="Back" />
+      <Button layoutX="214.0" layoutY="175.0" mnemonicParsing="false" onAction="#backAndGoToDashboardButtonOnAction" text="Back" />
       <Label layoutX="255.0" layoutY="14.0" text="Refund Manage" />
    </children>
 </AnchorPane>
