@@ -3,6 +3,7 @@ package com.example.kazi_office_and_marriage_register_office.yasin;
 import com.example.kazi_office_and_marriage_register_office.HelloApplication;
 import com.example.kazi_office_and_marriage_register_office.MarriageApplication;
 import com.example.kazi_office_and_marriage_register_office.Methods;
+import com.example.kazi_office_and_marriage_register_office.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -47,7 +48,9 @@ public class CorrectionRequestController
                 "Date of Birth",
                 "Other"
         );
-        application = MarriageApplication.readApplication("MarriageApplication.bin");
+        application = MarriageApplication.searchApplicationByUser("MarriageApplication.bin",
+                User.currentUser.getEmail()
+        );
 
         if (application != null) {
             applicationIdLabel.setText(application.getApplicationID());

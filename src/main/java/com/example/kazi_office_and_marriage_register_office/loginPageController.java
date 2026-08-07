@@ -44,6 +44,7 @@ public class loginPageController {
                 if (user == null){
                     Methods.myAlert("Invalid Username, Password or Role");
                 } else{
+                    User.currentUser = user;
                     loginMethod("yasin/DashBoard-view.fxml", actionEvent);
                 }
             }
@@ -53,6 +54,7 @@ public class loginPageController {
                 if (user == null){
                     Methods.myAlert("Invalid Username, Password or Role");
                 } else{
+                    User.currentUser = user;
                     loginMethod("yasin/DashBoard-view.fxml", actionEvent);
                 }
             }
@@ -81,6 +83,7 @@ public class loginPageController {
                     Methods.myAlert("Invalid user name, password or role");
                 }
                 else {
+                    User.currentUser = user;
                     loginMethod("Bushra FXML/WitnessDashboard.fxml", actionEvent);
                 }
 

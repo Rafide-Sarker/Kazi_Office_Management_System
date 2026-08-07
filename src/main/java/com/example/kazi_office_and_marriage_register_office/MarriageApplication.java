@@ -241,16 +241,25 @@ public class MarriageApplication implements Serializable {
 
         try {
             File f = new File(pathName);
-            FileOutputStream fos = new FileOutputStream(f);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new appendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+
             oos.writeObject(object);
             oos.close();
 
-        }catch (Exception e){
-            //
+        } catch (Exception e){
+            e.printStackTrace();
         }
     }
-
     public static MarriageApplication readApplication(String pathName) {
 
         File f = new File(pathName);
@@ -328,7 +337,29 @@ public class MarriageApplication implements Serializable {
         }
     }
 
+    public static MarriageApplication searchApplicationByUser(String pathName, String email) {
 
+        ArrayList<MarriageApplication> applicationList =
+                readAllApplications(pathName);
+
+        System.out.println("Total Applications = " + applicationList.size());
+
+        for (MarriageApplication app : applicationList) {
+
+            System.out.println("Searching For : " + email);
+            System.out.println("Bride Email : " + app.getEmailBride());
+            System.out.println("Groom Email : " + app.getEmailGroom());
+
+            if (app.getEmailBride().equals(email)
+                    || app.getEmailGroom().equals(email)) {
+                System.out.println("FOUND!");
+                return app;
+            }
+        }
+
+        System.out.println("NOT FOUND");
+        return null;
+    }
 
     public void setApplicationID(String applicationID) {
         this.applicationID = applicationID;

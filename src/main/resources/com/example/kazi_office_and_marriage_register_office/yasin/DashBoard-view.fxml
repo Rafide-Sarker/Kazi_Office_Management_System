@@ -34,7 +34,7 @@
       </MenuBar>
    </top>
    <left>
-      <VBox prefHeight="441.0" prefWidth="197.0" spacing="20.0" style="-fx-background-color: light blue;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="441.0" prefWidth="197.0" spacing="30.0" style="-fx-background-color: light blue;" BorderPane.alignment="CENTER">
          <children>
             <Button mnemonicParsing="false" onAction="#applyForMarriageButtonOnAction" prefHeight="26.0" prefWidth="203.0" text=" Apply for Marriage " textFill="#3c22bf" />
             <Button mnemonicParsing="false" onAction="#uploadDocumentsButtonOnAction" prefHeight="26.0" prefWidth="214.0" text="Upload Documents" textFill="#2d19c2" />
