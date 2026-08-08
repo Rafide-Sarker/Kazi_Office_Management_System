@@ -1,12 +1,9 @@
 package com.example.kazi_office_and_marriage_register_office;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.util.ArrayList;
+import java.io.*;
 
 public class User implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
     public String userID, userName, email, address, role;
     protected String password;
@@ -134,26 +131,7 @@ public class User implements Serializable {
             //System.out.println(e.getMessage());
         }
     }
-
-    public Boolean tryToLogin(){
-        return true;
-    }
-
-    public Boolean forgetPassword(){
-        return true;
-    }
-
-    public Boolean setNewPassword(){
-        return true;
-    }
-
-    public Boolean createNewAccount(){
-        return true;
-    }
-
-    public User findUser(){
-        return null;
-    }
+    
 
 }
 

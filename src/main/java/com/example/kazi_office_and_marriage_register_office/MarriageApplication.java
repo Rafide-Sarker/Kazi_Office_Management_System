@@ -389,12 +389,5 @@ public class MarriageApplication implements Serializable {
         this.documents = documents;
     }
 
-    public void updateStatus(){
-        return;
-    }
-
-    public void submit(){
-        return;
-    }
 
 }

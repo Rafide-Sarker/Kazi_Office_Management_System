@@ -117,11 +117,4 @@ public class Appointment implements Serializable {
         return LocalDate.now().getYear()+String.format("%04d",r.nextInt(10000));
     }
 
-    public void schedule(){
-        return;
-    }
-
-    public void update(){
-        return;
-    }
 }
