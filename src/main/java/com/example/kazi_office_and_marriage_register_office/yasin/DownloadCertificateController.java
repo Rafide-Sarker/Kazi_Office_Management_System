@@ -25,22 +25,31 @@ public class DownloadCertificateController
     public void downloadPdfAndGoToDashBoardButtonOnAction(ActionEvent actionEvent) throws IOException {
 
         MarriageApplication application =
-                MarriageApplication.searchApplicationByUser("MarriageApplication.bin",
+                MarriageApplication.searchApplicationByUser(
+                        "MarriageApplication.bin",
                         User.currentUser.getEmail()
                 );
 
-        Payment payment = Payment.readPayment("Payment.bin");
-        if(payment == null || !"Paid".equals(payment.getPaymentStatus())){
-            Methods.myAlert("Please complete the registration fee payment first.");
-            return;
-        }
+        //Payment payment = Payment.readPayment("Payment.bin");
 
         if (application == null) {
             Methods.myAlert("No application found.");
             return;
         }
 
-        if (!"Approved".equals(application.getStatus())) {
+        Payment payment = Payment.searchPaymentByApplicationId("Payment.bin",application.getApplicationID());
+
+        if(payment == null || !"Paid".equals(payment.getPaymentStatus())){
+            Methods.myAlert("Please complete the registration fee payment first.");
+            return;
+        }
+
+        MarriageCertificate certificate =
+                MarriageCertificate.searchCertificateByApplicationId(
+                        "MarriageCertificate.bin",
+                        application.getApplicationID()
+                );
+        if (certificate == null) {
             downloadPdfStatusTextFiled.setText("Not Approved");
             Methods.myAlert("Marriage is not approved yet.");
             return;

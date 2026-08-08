@@ -1,6 +1,8 @@
 package com.example.kazi_office_and_marriage_register_office.sayed;
 
 import com.example.kazi_office_and_marriage_register_office.HelloApplication;
+import com.example.kazi_office_and_marriage_register_office.Methods;
+import com.example.kazi_office_and_marriage_register_office.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -23,7 +25,7 @@ public class CreateUserAccountController
     @javafx.fxml.FXML
     private TextField fullNameTextField;
     @javafx.fxml.FXML
-    private ComboBox roleComboBox;
+    private ComboBox<String> roleComboBox;
     @javafx.fxml.FXML
     private TextField confirmPasswordTextField;
 
@@ -43,8 +45,6 @@ public class CreateUserAccountController
 
     @javafx.fxml.FXML
     public void createAccountButtonOnAction(ActionEvent actionEvent) throws IOException{
-
-        // generate id
 
         Alert myAlert = new Alert(Alert.AlertType.INFORMATION);
         myAlert.setTitle("Success");

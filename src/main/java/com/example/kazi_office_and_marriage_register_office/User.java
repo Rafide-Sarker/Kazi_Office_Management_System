@@ -1,9 +1,6 @@
 package com.example.kazi_office_and_marriage_register_office;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 import java.util.ArrayList;
 
 public class User implements Serializable {
@@ -30,6 +27,27 @@ public class User implements Serializable {
         this.role = role;
         this.password = password;
         this.phoneNumber = phoneNumber;
+    }
+    public static ArrayList<User> readAllUsers(String pathName){
+
+        ArrayList<User> list = new ArrayList<>();
+
+        try{
+            ObjectInputStream ois =
+                    new ObjectInputStream(new FileInputStream(pathName));
+
+            while(true){
+                User user = (User) ois.readObject();
+                list.add(user);
+            }
+
+        }catch(EOFException e){
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        return list;
     }
 
     public User() {

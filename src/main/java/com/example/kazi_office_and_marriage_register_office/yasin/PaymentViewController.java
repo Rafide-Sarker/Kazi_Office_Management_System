@@ -24,7 +24,6 @@ public class PaymentViewController
     private TextField mobileNumberTextField;
     private MarriageApplication application;
 
-
     @javafx.fxml.FXML
     public void initialize() {
         registrationFeeLabel.setText("1000");
@@ -39,8 +38,6 @@ public class PaymentViewController
                 User.currentUser.getEmail()
         );
     }
-
-
 
     @javafx.fxml.FXML
     public void payAndGoToDashBoard(ActionEvent actionEvent) throws IOException {
@@ -57,7 +54,6 @@ public class PaymentViewController
             return;
         }
 
-
         String paymentId = Payment.generatePaymentId();
 
         Payment oldPayment = Payment.searchPaymentByApplicationId(
@@ -69,7 +65,6 @@ public class PaymentViewController
             Methods.myAlert("Payment Already Completed");
             return;
         }
-
 
         Payment payment = new Payment(
                 paymentId,

@@ -19,7 +19,6 @@ public class MarriageApplicant extends User {
     }
 
 
-
     public MarriageApplicant(String userID, String userName, String email, String address, String role, String password, int phoneNumber) {
         super(userID, userName, email, address, role, password, phoneNumber);
     }
