@@ -6,6 +6,7 @@ import java.time.LocalTime;
 import java.util.Random;
 
 public class Appointment implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String appointmentId;
     private LocalDate appointmentDate;
     private LocalTime time;
