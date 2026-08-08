@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.Random;
 
 public class Payment implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String paymentId;
     private double amount;
     private String paymentMethod;
