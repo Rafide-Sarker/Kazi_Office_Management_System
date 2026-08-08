@@ -361,17 +361,32 @@ public class MarriageApplication implements Serializable {
         return null;
     }
 
-    public static MarriageApplication searchApplicationByApplicationId(
-            String pathName, String applicationId) {
+    public static MarriageApplication searchApplicationByApplicationId(String pathName, String applicationId) {
 
-        ArrayList<MarriageApplication> applicationList =
-                readAllApplications(pathName);
+        File file = new File(pathName);
 
-        for (MarriageApplication app : applicationList) {
+        if (!file.exists()) {
+            return null;
+        }
 
-            if (app.getApplicationID().equals(applicationId)) {
-                return app;
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true) {
+                MarriageApplication application =
+                        (MarriageApplication) ois.readObject();
+
+                if (application.getApplicationID().equals(applicationId)) {
+                    ois.close();
+                    return application;
+                }
             }
+
+        } catch (EOFException e) {
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         return null;
@@ -405,5 +420,12 @@ public class MarriageApplication implements Serializable {
         this.documents = documents;
     }
 
+    public void updateStatus(){
+        return;
+    }
+
+    public void submit(){
+        return;
+    }
 
 }

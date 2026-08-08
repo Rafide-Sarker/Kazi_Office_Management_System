@@ -1,6 +1,9 @@
 package com.example.kazi_office_and_marriage_register_office.sayed;
 
 import com.example.kazi_office_and_marriage_register_office.HelloApplication;
+import com.example.kazi_office_and_marriage_register_office.MarriageApplication;
+import com.example.kazi_office_and_marriage_register_office.Methods;
+import com.example.kazi_office_and_marriage_register_office.Payment;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -24,10 +27,11 @@ public class CollectRegistrationFeeController
     @javafx.fxml.FXML
     private Label registrationFeeLabel;
     @javafx.fxml.FXML
-    private ComboBox paymentMethodComboBox;
+    private TextField paymentMethodTextField;
 
     @javafx.fxml.FXML
     public void initialize() {
+
     }
 
     @javafx.fxml.FXML
@@ -42,17 +46,58 @@ public class CollectRegistrationFeeController
 
     @javafx.fxml.FXML
     public void completePaymentButtonOnAction(ActionEvent actionEvent)throws IOException {
+        MarriageApplication application =
+                MarriageApplication.searchApplicationByApplicationId(
+                        "MarriageApplication.bin",
+                        applicationIdTextField.getText()
+                );
+
+        Payment payment = new Payment(
+                Payment.generatePaymentId(),
+                1000,
+                paymentMethodTextField.getText(),
+                "Paid",
+                transactionIdTextField.getText(),
+                application.getApplicationID()
+        );
+
+        Payment.savePaymentBinaryFile("Payment.bin", payment);
+
         Alert myAlert = new Alert(Alert.AlertType.INFORMATION);
         myAlert.setTitle("Success");
         myAlert.setHeaderText("Payment Completed Successfully!");
         myAlert.setContentText("Receipt No: ");
         myAlert.showAndWait();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("sayed/dashboard-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(
+                HelloApplication.class.getResource("sayed/dashboard-view.fxml")
+        );
         Scene scene = new Scene(fxmlLoader.load());
-        Stage nextStage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
+        Stage nextStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         nextStage.setTitle("DashBoard!");
         nextStage.setScene(scene);
         nextStage.show();
+    }
+
+
+    @javafx.fxml.FXML
+    public void searchButtonOnAction(ActionEvent actionEvent) {
+        MarriageApplication application =
+                MarriageApplication.searchApplicationByApplicationId(
+                        "MarriageApplication.bin",
+                        applicationIdTextField.getText()
+                );
+
+        if (application == null) {
+            Methods.myAlert("Application Not Found");
+            return;
+        }
+
+        applicantNameLabel.setText(
+                application.getFullNameBride() + " & " +
+                        application.getFullNameGroom()
+        );
+
+        registrationFeeLabel.setText("1000");
     }
 }
