@@ -361,6 +361,37 @@ public class MarriageApplication implements Serializable {
         return null;
     }
 
+    public static MarriageApplication searchApplicationByApplicationId(String pathName, String applicationId) {
+
+        File file = new File(pathName);
+
+        if (!file.exists()) {
+            return null;
+        }
+
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            while (true) {
+                MarriageApplication application =
+                        (MarriageApplication) ois.readObject();
+
+                if (application.getApplicationID().equals(applicationId)) {
+                    ois.close();
+                    return application;
+                }
+            }
+
+        } catch (EOFException e) {
+            return null;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
     public void setApplicationID(String applicationID) {
         this.applicationID = applicationID;
     }
