@@ -2,7 +2,6 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -36,11 +35,9 @@
    <left>
       <Pane prefHeight="200.0" prefWidth="270.0" style="-fx-background-color: #0E2227;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="18.0" layoutY="52.0" text="Report Type" textFill="#f2ecec" />
-            <Label layoutX="18.0" layoutY="113.0" text="From Date" textFill="#f2ecec" />
-            <Label layoutX="18.0" layoutY="172.0" text="To Date" textFill="#f2ecec" />
-            <Label layoutX="15.0" layoutY="225.0" text="Status" textFill="#f2ecec" />
-            <Button layoutX="38.0" layoutY="305.0" mnemonicParsing="false" onAction="#generateReportOnAction" prefHeight="23.0" prefWidth="195.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Generate Report">
+            <Label layoutX="18.0" layoutY="48.0" text="From Date" textFill="#f2ecec" />
+            <Label layoutX="18.0" layoutY="107.0" text="To Date" textFill="#f2ecec" />
+            <Button layoutX="38.0" layoutY="183.0" mnemonicParsing="false" onAction="#generateReportOnAction" prefHeight="23.0" prefWidth="195.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Generate Report">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -48,7 +45,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="38.0" layoutY="350.0" mnemonicParsing="false" onAction="#clearGenerateReportOnAction" prefHeight="23.0" prefWidth="195.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Clear">
+            <Button layoutX="38.0" layoutY="228.0" mnemonicParsing="false" onAction="#clearGenerateReportOnAction" prefHeight="23.0" prefWidth="195.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Clear">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -56,15 +53,13 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <DatePicker fx:id="grFromDateDatePicker" layoutX="16.0" layoutY="139.0" prefHeight="25.0" prefWidth="244.0" />
-            <ComboBox fx:id="grReportTypeComboBox" editable="true" layoutX="19.0" layoutY="79.0" prefHeight="25.0" prefWidth="239.0" promptText="Status" style="-fx-background-color: Gray;" />
+            <DatePicker fx:id="grFromDateDatePicker" layoutX="16.0" layoutY="74.0" prefHeight="25.0" prefWidth="244.0" />
             <Label layoutX="18.0" layoutY="14.0" text="Report Options" textFill="#f2ecec">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <DatePicker fx:id="grToDateDatePicker" layoutX="17.0" layoutY="194.0" prefHeight="25.0" prefWidth="244.0" />
-            <ComboBox fx:id="grStatusComboBox" editable="true" layoutX="16.0" layoutY="250.0" prefHeight="25.0" prefWidth="239.0" promptText="Status" style="-fx-background-color: gray;" />
+            <DatePicker fx:id="grToDateDatePicker" layoutX="17.0" layoutY="129.0" prefHeight="25.0" prefWidth="244.0" />
          </children>
       </Pane>
    </left>
@@ -86,17 +81,17 @@
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor></TextField>
-            <Label layoutX="100.0" layoutY="208.0" text="Archived Record" textFill="#f2ecec" />
-            <TextField fx:id="grArchivedRecordTextField" editable="false" layoutX="205.0" layoutY="203.0" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: gray;">
+            <Label layoutX="100.0" layoutY="208.0" text="To Date" textFill="#f2ecec" />
+            <TextField fx:id="grToDateTF" editable="false" layoutX="205.0" layoutY="203.0" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: gray;">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor></TextField>
-            <Label layoutX="100.0" layoutY="169.0" text="Active Record" textFill="#f2ecec" />
-            <TextField fx:id="grActiveRecordTextField" editable="false" layoutX="205.0" layoutY="164.0" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: gray;">
+            <Label layoutX="100.0" layoutY="169.0" text="From Date" textFill="#f2ecec" />
+            <TextField fx:id="grFromDateTF" editable="false" layoutX="205.0" layoutY="164.0" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: gray;">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor></TextField>
-            <Button layoutX="145.0" layoutY="257.0" mnemonicParsing="false" onAction="#downloadReeportOnAction" prefHeight="23.0" prefWidth="195.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Download Report">
+            <Button layoutX="145.0" layoutY="285.0" mnemonicParsing="false" onAction="#downloadReeportOnAction" prefHeight="23.0" prefWidth="195.0" style="-fx-background-color: #D88C3A; -fx-text-fill: #F5F5F5; -fx-background-radius: 5;" text="Download Report">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -104,6 +99,12 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <TextField fx:id="grReprotDateTF" editable="false" layoutX="204.0" layoutY="240.0" prefHeight="26.0" prefWidth="199.0" style="-fx-background-color: gray;">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TextField>
+            <Label layoutX="100.0" layoutY="245.0" text="Report Date" textFill="#f2ecec" />
          </children>
       </AnchorPane>
    </center>

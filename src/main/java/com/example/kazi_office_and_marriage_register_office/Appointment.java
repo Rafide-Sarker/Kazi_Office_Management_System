@@ -9,9 +9,9 @@ public class Appointment implements Serializable {
     private String appointmentId;
     private LocalDate appointmentDate;
     private LocalTime time;
-    private Boolean status;
+    private String status;
 
-    public Appointment(String appointmentId, LocalDate appointmentDate, LocalTime time, Boolean status) {
+    public Appointment(String appointmentId, LocalDate appointmentDate, LocalTime time, String status) {
         this.appointmentId = appointmentId;
         this.appointmentDate = appointmentDate;
         this.time = time;
@@ -45,11 +45,11 @@ public class Appointment implements Serializable {
         this.time = time;
     }
 
-    public Boolean getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -117,11 +117,4 @@ public class Appointment implements Serializable {
         return LocalDate.now().getYear()+String.format("%04d",r.nextInt(10000));
     }
 
-    public void schedule(){
-        return;
-    }
-
-    public void update(){
-        return;
-    }
 }

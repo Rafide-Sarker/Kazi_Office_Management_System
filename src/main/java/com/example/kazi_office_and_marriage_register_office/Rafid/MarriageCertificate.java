@@ -2,10 +2,12 @@ package com.example.kazi_office_and_marriage_register_office.Rafid;
 
 import com.example.kazi_office_and_marriage_register_office.MarriageApplication;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDate;
 
 public class MarriageCertificate implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     private String certificateNo;

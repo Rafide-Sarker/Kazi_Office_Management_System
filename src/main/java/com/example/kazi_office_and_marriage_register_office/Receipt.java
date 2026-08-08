@@ -79,17 +79,4 @@ public class Receipt implements Serializable {
         return LocalDate.now().getYear() +
                 String.format("%04d", r.nextInt(10000));
     }
-
-    public boolean generateReceipt(){
-        return true;
-    }
-    public boolean printReceipt(){
-        return true;
-    }
-    public boolean downloadReceipt(){
-        return true;
-    }
-    public boolean viewReceipt(){
-        return true;
-    }
 }

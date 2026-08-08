@@ -72,29 +72,4 @@ public class Registrar extends User {
                 '}';
     }
 
-    public void registerApprovedMarriage(){
-        return;
-    }
-    public void storeMarriageRecord(){
-        return;
-    }
-    public void updateRegistry(){
-        return;
-    }
-    public void verifyCertificate(){
-        return;
-    }
-    public void issueDuplicateCertificate(){
-        return;
-    }
-    public void searchRecords(){
-        return;
-    }
-    public void generateReports(){
-        return;
-    }
-    public void archiveRecords(){
-        return;
-    }
-
 }

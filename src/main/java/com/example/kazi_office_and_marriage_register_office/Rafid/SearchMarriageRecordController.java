@@ -117,6 +117,8 @@ public class SearchMarriageRecordController {
 
     @javafx.fxml.FXML
     public void clearMarriageRecordFilterOnAction(ActionEvent actionEvent) {
+        ArrayList<MarriageCertificate> certificateList = Methods.readCertificateBinaryFile("MarriageCertificateList.bin");
+
         rmsSearchMarriageIdTF.clear();
         rmsSearchBrideTF.clear();
         rmsSearchGroomTF.clear();
@@ -128,6 +130,9 @@ public class SearchMarriageRecordController {
         selectedCertificateNoTF.clear();
         selectedMarriageDateTF.clear();
         selectedStatusTF.clear();
+
+        rmsMarriageRecordListTV.getItems().clear();
+        rmsMarriageRecordListTV.getItems().addAll(certificateList);
     }
 
     public void tableView(MarriageCertificate certificate){

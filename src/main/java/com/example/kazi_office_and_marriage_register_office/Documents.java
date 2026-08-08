@@ -168,11 +168,4 @@ public class Documents implements Serializable {
         }
     }
 
-    public void upload() {
-        return ;
-    }
-
-    public void verify() {
-        return;
-    }
 }

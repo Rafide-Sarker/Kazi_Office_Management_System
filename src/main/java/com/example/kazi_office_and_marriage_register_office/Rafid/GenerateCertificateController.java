@@ -8,21 +8,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
+
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class GenerateCertificateController{
-    @javafx.fxml.FXML
-    private Label titleLabel;
-    @javafx.fxml.FXML
-    private BorderPane generateMarriageCertificatePane;
+
     @javafx.fxml.FXML
     private TextField gmcWitness1TextField;
     @javafx.fxml.FXML
@@ -77,14 +74,14 @@ public class GenerateCertificateController{
         gmcBrideDobdatePicker.setValue(application.getDobBride());
         gmcDobDatePicker.setValue(application.getDobGroom());
         gmcMarriageDateDatePicker.setValue(LocalDate.now());
-        gmcRegistrationNoTextField.setText("REG-" + String.valueOf(LocalDate.now()));
-        gmcCertificateNoTextField.setText("CER-" + String.valueOf(LocalDate.now()));
+        gmcRegistrationNoTextField.setText("REG-" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS")));
+        gmcCertificateNoTextField.setText("CER-" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS")));
         gmcMarriageIdTextField.setText(application.getApplicationID());
     }
 
 
     @javafx.fxml.FXML
-    public void GenerateCertificate(ActionEvent actionEvent) {
+    public void GenerateCertificate() {
         ArrayList<MarriageCertificate> certificateList = Methods.readCertificateBinaryFile("MarriageCertificateList.bin");
 
         if (gmcRegisteredByTextField.getText().isBlank()) {
@@ -112,7 +109,7 @@ public class GenerateCertificateController{
 
     @javafx.fxml.FXML
     public void BackFromOnAction(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("rafid_fxml/registrar-dashboard-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("rafid_fxml/kazi-dashboard-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage nextStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         nextStage.setTitle("Kazi Office");
