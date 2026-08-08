@@ -2,6 +2,7 @@ package com.example.kazi_office_and_marriage_register_office;
 
 import java.io.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Payment implements Serializable {
@@ -183,6 +184,68 @@ public class Payment implements Serializable {
         }
 
         return null;
+    }
+    public static ArrayList<Payment> readAllPayments(String pathName){
+
+        ArrayList<Payment> list = new ArrayList<>();
+
+        try{
+
+            ObjectInputStream ois =
+                    new ObjectInputStream(new FileInputStream(pathName));
+
+            while(true){
+
+                Payment p = (Payment) ois.readObject();
+
+                list.add(p);
+
+            }
+
+        }catch(EOFException e){
+
+        }catch(Exception e){
+
+            e.printStackTrace();
+
+        }
+
+        return list;
+
+    }
+    public static void updatePayment(String pathName, Payment updatedPayment){
+
+        ArrayList<Payment> list = readAllPayments(pathName);
+
+        try{
+
+            ObjectOutputStream oos =
+                    new ObjectOutputStream(new FileOutputStream(pathName));
+
+            for(Payment p : list){
+
+                if(p.getApplicationId().equals(updatedPayment.getApplicationId())){
+
+                    oos.writeObject(updatedPayment);
+
+                }
+
+                else{
+
+                    oos.writeObject(p);
+
+                }
+
+            }
+
+            oos.close();
+
+        }catch(Exception e){
+
+            e.printStackTrace();
+
+        }
+
     }
 
 

@@ -42,8 +42,6 @@ public class CollectRegistrationFeeController
 
     @javafx.fxml.FXML
     public void completePaymentButtonOnAction(ActionEvent actionEvent)throws IOException {
-
-
         Alert myAlert = new Alert(Alert.AlertType.INFORMATION);
         myAlert.setTitle("Success");
         myAlert.setHeaderText("Payment Completed Successfully!");

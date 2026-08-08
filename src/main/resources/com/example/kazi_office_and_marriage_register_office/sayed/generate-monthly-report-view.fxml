@@ -9,11 +9,11 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kazi_office_and_marriage_register_office.sayed.GenerateMonthleyReport">
    <children>
       <Label layoutX="50.0" layoutY="49.0" text="Month" />
-      <ComboBox layoutX="124.0" layoutY="45.0" prefWidth="150.0" />
+      <ComboBox fx:id="monthComboBox" layoutX="124.0" layoutY="45.0" prefWidth="150.0" promptText=" " />
       <Label layoutX="50.0" layoutY="85.0" text="Year" />
-      <ComboBox layoutX="124.0" layoutY="81.0" prefWidth="150.0" />
+      <ComboBox fx:id="yearComboBox" layoutX="124.0" layoutY="81.0" prefWidth="150.0" />
       <Label layoutX="50.0" layoutY="125.0" text="Report Type" />
-      <ComboBox layoutX="124.0" layoutY="121.0" prefWidth="150.0" />
+      <ComboBox fx:id="reportTypeComboBox" layoutX="124.0" layoutY="121.0" prefWidth="150.0" />
       <Label layoutX="132.0" layoutY="212.0" text="Monthly Report" />
       <Label layoutX="55.0" layoutY="253.0" text="Month" />
       <Label layoutX="55.0" layoutY="289.0" text="Year" />
@@ -21,13 +21,13 @@
       <Label layoutX="55.0" layoutY="365.0" text="Total Revenue" />
       <Label layoutX="56.0" layoutY="399.0" text="Total Refund" />
       <Label layoutX="56.0" layoutY="433.0" text="Net Income" />
-      <Button layoutX="52.0" layoutY="165.0" mnemonicParsing="false" onAction="#generateReport" text="Generate Report" />
+      <Button layoutX="52.0" layoutY="165.0" mnemonicParsing="false" onAction="#generateReportButtonOnAction" text="Generate Report" />
       <Button layoutX="174.0" layoutY="165.0" mnemonicParsing="false" onAction="#BackOnAction" text="Back" />
-      <TextField layoutX="174.0" layoutY="249.0" />
-      <TextField layoutX="174.0" layoutY="286.0" />
-      <TextField layoutX="174.0" layoutY="324.0" />
-      <TextField layoutX="174.0" layoutY="361.0" />
-      <TextField layoutX="174.0" layoutY="395.0" />
-      <TextField layoutX="174.0" layoutY="432.0" />
+      <TextField fx:id="monthTF" layoutX="174.0" layoutY="249.0" />
+      <TextField fx:id="yearTF" layoutX="174.0" layoutY="286.0" />
+      <TextField fx:id="totalPaymentTF" layoutX="174.0" layoutY="324.0" />
+      <TextField fx:id="totalRevenueTF" layoutX="174.0" layoutY="361.0" />
+      <TextField fx:id="totalRefundTF" layoutX="174.0" layoutY="395.0" />
+      <TextField fx:id="netIncomeTF" layoutX="174.0" layoutY="432.0" />
    </children>
 </AnchorPane>

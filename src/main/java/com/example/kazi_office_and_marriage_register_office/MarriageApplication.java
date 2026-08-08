@@ -361,6 +361,22 @@ public class MarriageApplication implements Serializable {
         return null;
     }
 
+    public static MarriageApplication searchApplicationByApplicationId(
+            String pathName, String applicationId) {
+
+        ArrayList<MarriageApplication> applicationList =
+                readAllApplications(pathName);
+
+        for (MarriageApplication app : applicationList) {
+
+            if (app.getApplicationID().equals(applicationId)) {
+                return app;
+            }
+        }
+
+        return null;
+    }
+
     public void setApplicationID(String applicationID) {
         this.applicationID = applicationID;
     }
