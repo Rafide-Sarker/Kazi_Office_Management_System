@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.Random;
 
 public class Receipt implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     private String receiptId;
     private LocalDate issueDate;
